@@ -1,0 +1,443 @@
+---
+import Layout from '../layouts/Layout.astro';
+import packages from '../data/packages.json';
+import company from '../data/company.json';
+---
+
+<Layout
+  title="Request a Custom Quote | Iconic Travel & Tours (GL #5247)"
+  description="Build your personalized Umrah travel package with our 5-step quote builder. Customized hotel selections, transport arrangements, and group coordination."
+>
+
+  <!-- Hero Header -->
+  <section class="relative py-16 bg-brand-emerald text-white overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img
+        src="/images/luxury-hotel-suite.jpg"
+        alt="Luxury hotel interior"
+        class="w-full h-full object-cover opacity-20 scale-105"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-brand-emerald/90 via-brand-emerald/95 to-brand-forest"></div>
+    </div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3">
+      <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.25em] text-brand-gold">
+        <span>Bespoke Travel Planning</span>
+        <span>•</span>
+        <span>Karachi Reservation Desk</span>
+      </div>
+
+      <h1 class="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-brand-ivory">
+        Plan Your Blessed Journey
+      </h1>
+
+      <p class="max-w-xl mx-auto text-xs sm:text-sm text-brand-ivory/80 leading-relaxed font-light">
+        Complete our 5-step interactive quote builder to receive an honest, tailored proposal aligned with your family’s exact requirements.
+      </p>
+    </div>
+  </section>
+
+  <!-- Multi-Step Form Container -->
+  <section class="py-16 bg-brand-ivory">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Stepper Indicator -->
+      <div class="mb-10 bg-white p-4 sm:p-6 rounded-3xl border border-brand-gold/25 shadow-sm">
+        <div class="grid grid-cols-5 gap-2 text-center">
+          
+          <div class="step-indicator active flex flex-col items-center gap-1" data-step="1">
+            <span class="w-8 h-8 rounded-full bg-brand-gold text-brand-emerald font-bold text-xs flex items-center justify-center shadow-sm">1</span>
+            <span class="text-[10px] sm:text-xs font-semibold text-brand-emerald hidden sm:block">Personal</span>
+          </div>
+
+          <div class="step-indicator flex flex-col items-center gap-1 opacity-50" data-step="2">
+            <span class="w-8 h-8 rounded-full bg-brand-ivory border border-brand-gold/40 text-brand-charcoal font-bold text-xs flex items-center justify-center">2</span>
+            <span class="text-[10px] sm:text-xs font-medium text-brand-charcoal hidden sm:block">Services</span>
+          </div>
+
+          <div class="step-indicator flex flex-col items-center gap-1 opacity-50" data-step="3">
+            <span class="w-8 h-8 rounded-full bg-brand-ivory border border-brand-gold/40 text-brand-charcoal font-bold text-xs flex items-center justify-center">3</span>
+            <span class="text-[10px] sm:text-xs font-medium text-brand-charcoal hidden sm:block">Departure</span>
+          </div>
+
+          <div class="step-indicator flex flex-col items-center gap-1 opacity-50" data-step="4">
+            <span class="w-8 h-8 rounded-full bg-brand-ivory border border-brand-gold/40 text-brand-charcoal font-bold text-xs flex items-center justify-center">4</span>
+            <span class="text-[10px] sm:text-xs font-medium text-brand-charcoal hidden sm:block">Preferences</span>
+          </div>
+
+          <div class="step-indicator flex flex-col items-center gap-1 opacity-50" data-step="5">
+            <span class="w-8 h-8 rounded-full bg-brand-ivory border border-brand-gold/40 text-brand-charcoal font-bold text-xs flex items-center justify-center">5</span>
+            <span class="text-[10px] sm:text-xs font-medium text-brand-charcoal hidden sm:block">Review</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Form Box -->
+      <div class="bg-white rounded-3xl p-6 sm:p-10 border border-brand-gold/30 shadow-luxury">
+        <form id="quote-multistep-form" class="space-y-8">
+          
+          <!-- STEP 1: Personal Information -->
+          <div class="form-step space-y-6" id="step-1">
+            <div class="border-b border-brand-gold/20 pb-3">
+              <span class="text-xs font-mono uppercase text-brand-gold-dark font-semibold">Step 01 of 05</span>
+              <h2 class="font-serif text-2xl font-bold text-brand-emerald">Personal Information</h2>
+              <p class="text-xs text-brand-charcoal-muted">How our Karachi reservation desk may address and reach you.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="q-name" class="block text-xs font-semibold text-brand-charcoal mb-1">Full Name *</label>
+                <input type="text" id="q-name" name="name" required placeholder="e.g. Tariq Mehmood" class="w-full text-xs rounded-xl border-brand-gold/30 bg-brand-ivory/50 py-3 px-3.5" />
+              </div>
+              <div>
+                <label for="q-email" class="block text-xs font-semibold text-brand-charcoal mb-1">Email Address *</label>
+                <input type="email" id="q-email" name="email" required placeholder="tariq@example.com" class="w-full text-xs rounded-xl border-brand-gold/30 bg-brand-ivory/50 py-3 px-3.5" />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="q-phone" class="block text-xs font-semibold text-brand-charcoal mb-1">Phone / WhatsApp Number *</label>
+                <input type="tel" id="q-phone" name="phone" required placeholder="+92 332 1234567" class="w-full text-xs rounded-xl border-brand-gold/30 bg-brand-ivory/50 py-3 px-3.5" />
+              </div>
+              <div>
+                <label for="q-city" class="block text-xs font-semibold text-brand-charcoal mb-1">City / Country of Residence *</label>
+                <input type="text" id="q-city" name="city" required placeholder="e.g. Karachi, Pakistan" class="w-full text-xs rounded-xl border-brand-gold/30 bg-brand-ivory/50 py-3 px-3.5" />
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 2: Travel Requirements -->
+          <div class="form-step hidden space-y-6" id="step-2">
+            <div class="border-b border-brand-gold/20 pb-3">
+              <span class="text-xs font-mono uppercase text-brand-gold-dark font-semibold">Step 02 of 05</span>
+              <h2 class="font-serif text-2xl font-bold text-brand-emerald">Travel Requirements</h2>
+              <p class="text-xs text-brand-charcoal-muted">Select the primary service scope you wish to include.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <label class="p-4 rounded-2xl border border-brand-gold/30 bg-brand-ivory/30 flex items-start gap-3 cursor-pointer hover:bg-brand-gold/10 transition-colors">
+                <input type="radio" name="service_type" value="Umrah Group Package" checked class="mt-1 text-brand-gold focus:ring-brand-gold" />
+                <div class="text-xs">
+                  <strong class="font-serif text-sm block text-brand-emerald">Umrah Group Packages</strong>
+                  <span class="text-brand-charcoal-muted">Signature collective tours with group leader & breakfast dining.</span>
+                </div>
+              </label>
+
+              <label class="p-4 rounded-2xl border border-brand-gold/30 bg-brand-ivory/30 flex items-start gap-3 cursor-pointer hover:bg-brand-gold/10 transition-colors">
+                <input type="radio" name="service_type" value="Individual / Private Umrah" class="mt-1 text-brand-gold focus:ring-brand-gold" />
+                <div class="text-xs">
+                  <strong class="font-serif text-sm block text-brand-emerald">Individual / Private Umrah</strong>
+                  <span class="text-brand-charcoal-muted">Customized luxury schedule for private couples and families.</span>
+                </div>
+              </label>
+
+              <label class="p-4 rounded-2xl border border-brand-gold/30 bg-brand-ivory/30 flex items-start gap-3 cursor-pointer hover:bg-brand-gold/10 transition-colors">
+                <input type="radio" name="service_type" value="Hotel Booking Only" class="mt-1 text-brand-gold focus:ring-brand-gold" />
+                <div class="text-xs">
+                  <strong class="font-serif text-sm block text-brand-emerald">Hotel Accommodation Only</strong>
+                  <span class="text-brand-charcoal-muted">5-Star & 4-Star confirmed rooms directly near the Holy Mosques.</span>
+                </div>
+              </label>
+
+              <label class="p-4 rounded-2xl border border-brand-gold/30 bg-brand-ivory/30 flex items-start gap-3 cursor-pointer hover:bg-brand-gold/10 transition-colors">
+                <input type="radio" name="service_type" value="Full Package with VIP Fleet" class="mt-1 text-brand-gold focus:ring-brand-gold" />
+                <div class="text-xs">
+                  <strong class="font-serif text-sm block text-brand-emerald">VIP Chauffeur & Train Bundles</strong>
+                  <span class="text-brand-charcoal-muted">Private GMC Yukon transfers and Haramain high-speed rail.</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- STEP 3: Departure & Duration -->
+          <div class="form-step hidden space-y-6" id="step-3">
+            <div class="border-b border-brand-gold/20 pb-3">
+              <span class="text-xs font-mono uppercase text-brand-gold-dark font-semibold">Step 03 of 05</span>
+              <h2 class="font-serif text-2xl font-bold text-brand-emerald">Departure Information</h2>
+              <p class="text-xs text-brand-charcoal-muted">Specify your target travel timeline and room sharing.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="q-month" class="block text-xs font-semibold text-brand-charcoal mb-1">Target Travel Month / Season *</label>
+                <select id="q-month" name="departure_month" class="w-full text-xs rounded-xl border-brand-gold/30 bg-brand-ivory/50 py-3 px-3.5">
+                  <option value="Ramadan 2026 / 1448 AH">Ramadan 2026 / 1448 AH</option>
+                  <option value="October 2026">October 2026</option>
+                  <option value="November 2026">November 2026</option>
+                  <option value="December 2026">December 2026 (Winter Holidays)</option>
+                  <option value="Early 2027 / Rajab / Shaban">Early 2027 / Rajab / Shaban</option>
+                  <option value="Custom Dates">Custom Dates on Request</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="q-duration" class="block text-xs font-semibold text-brand-charcoal mb-1">Desired Duration *</label>
+                <select id="q-duration" name="duration" class="w-full text-xs rounded-xl border-brand-gold/30 bg-brand-ivory/50 py-3 px-3.5">
+                  <option value="10 Days (5N Makkah / 5N Madinah)">10 Days (5N Makkah / 5N Madinah)</option>
+                  <option value="14 Days (7N Makkah / 7N Madinah)">14 Days (7N Makkah / 7N Madinah)</option>
+                  <option value="15 Days Group Signature">15 Days Signature Tour</option>
+                  <option value="21 Days Comprehensive Family">21 Days Comprehensive Family</option>
+                  <option value="Custom Duration">Custom Duration</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="q-travelers-count" class="block text-xs font-semibold text-brand-charcoal mb-1">Number of Travelers *</label>
+                <input type="number" id="q-travelers-count" name="travelers_count" min="1" max="100" value="2" class="w-full text-xs rounded-xl border-brand-gold/30 bg-brand-ivory/50 py-3 px-3.5" />
+              </div>
+
+              <div>
+                <label for="q-occupancy" class="block text-xs font-semibold text-brand-charcoal mb-1">Room Occupancy Plan</label>
+                <select id="q-occupancy" name="occupancy" class="w-full text-xs rounded-xl border-brand-gold/30 bg-brand-ivory/50 py-3 px-3.5">
+                  <option value="Double Sharing (2 Persons / Room)">Double Sharing (2 Persons / Room)</option>
+                  <option value="Triple Sharing (3 Persons / Room)">Triple Sharing (3 Persons / Room)</option>
+                  <option value="Quad Sharing (4 Persons / Room)">Quad Sharing (4 Persons / Room)</option>
+                  <option value="2-Bedroom Interconnected Family Suite">2-Bedroom Interconnected Family Suite</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 4: Additional Requirements -->
+          <div class="form-step hidden space-y-6" id="step-4">
+            <div class="border-b border-brand-gold/20 pb-3">
+              <span class="text-xs font-mono uppercase text-brand-gold-dark font-semibold">Step 04 of 05</span>
+              <h2 class="font-serif text-2xl font-bold text-brand-emerald">Additional Preferences</h2>
+              <p class="text-xs text-brand-charcoal-muted">Special assistance, flight preferences, and custom needs.</p>
+            </div>
+
+            <div class="space-y-3">
+              <label class="block text-xs font-semibold text-brand-charcoal">Special Accommodations (Check all that apply):</label>
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                <label class="flex items-center gap-2 p-3 rounded-xl border border-brand-gold/20 bg-brand-ivory/30 cursor-pointer">
+                  <input type="checkbox" name="special_needs" value="Wheelchair Assistance for Elderly" class="rounded text-brand-gold" />
+                  <span>Wheelchair Assistance for Elderly</span>
+                </label>
+                <label class="flex items-center gap-2 p-3 rounded-xl border border-brand-gold/20 bg-brand-ivory/30 cursor-pointer">
+                  <input type="checkbox" name="special_needs" value="Haramain High-Speed Train Tickets" class="rounded text-brand-gold" />
+                  <span>Haramain Electric Train Tickets</span>
+                </label>
+                <label class="flex items-center gap-2 p-3 rounded-xl border border-brand-gold/20 bg-brand-ivory/30 cursor-pointer">
+                  <input type="checkbox" name="special_needs" value="International Air Tickets from Karachi" class="rounded text-brand-gold" />
+                  <span>International Flights from Karachi</span>
+                </label>
+                <label class="flex items-center gap-2 p-3 rounded-xl border border-brand-gold/20 bg-brand-ivory/30 cursor-pointer">
+                  <input type="checkbox" name="special_needs" value="Private Ziyarat Guide" class="rounded text-brand-gold" />
+                  <span>Private Guided Ziyarat Circuit</span>
+                </label>
+              </div>
+            </div>
+
+            <div>
+              <label for="q-notes" class="block text-xs font-semibold text-brand-charcoal mb-1">Additional Notes or Inquiries</label>
+              <textarea id="q-notes" name="notes" rows="3" placeholder="Tell us if you have preferred hotel chains (Fairmont, Swissotel, Pullman, Oberoi) or specific budget ranges..." class="w-full text-xs rounded-xl border-brand-gold/30 bg-brand-ivory/50 py-3 px-3.5"></textarea>
+            </div>
+          </div>
+
+          <!-- STEP 5: Review & Submit -->
+          <div class="form-step hidden space-y-6" id="step-5">
+            <div class="border-b border-brand-gold/20 pb-3">
+              <span class="text-xs font-mono uppercase text-brand-gold-dark font-semibold">Step 05 of 05</span>
+              <h2 class="font-serif text-2xl font-bold text-brand-emerald">Review & Submit Quotation</h2>
+              <p class="text-xs text-brand-charcoal-muted">Please confirm your submitted details below before final transmission.</p>
+            </div>
+
+            <!-- Review Summary Container -->
+            <div id="review-summary" class="bg-brand-ivory p-6 rounded-2xl border border-brand-gold/25 space-y-3 text-xs">
+              <p class="text-brand-charcoal-muted">Loading summary...</p>
+            </div>
+
+            <!-- Honest Feedback State -->
+            <div id="quote-status-box" class="hidden p-4 rounded-xl text-xs"></div>
+          </div>
+
+          <!-- Navigation Button Controls -->
+          <div class="flex items-center justify-between pt-6 border-t border-brand-gold/20">
+            <button
+              type="button"
+              id="prev-step-btn"
+              class="hidden px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-wider bg-brand-ivory text-brand-charcoal border border-brand-gold/30 hover:bg-brand-gold/20 transition-all"
+            >
+              ← Previous Step
+            </button>
+
+            <button
+              type="button"
+              id="next-step-btn"
+              class="ml-auto px-8 py-3.5 rounded-xl text-xs font-bold uppercase tracking-widest bg-brand-emerald text-brand-gold hover:bg-brand-forest shadow-md transition-all"
+            >
+              Next Step →
+            </button>
+
+            <button
+              type="submit"
+              id="submit-quote-btn"
+              class="hidden ml-auto px-8 py-3.5 rounded-xl text-xs font-bold uppercase tracking-widest bg-brand-gold text-brand-emerald hover:brightness-110 shadow-gold-glow transition-all"
+            >
+              Submit Official Request
+            </button>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+</Layout>
+
+<script>
+  let currentStep = 1;
+  const totalSteps = 5;
+
+  const formSteps = document.querySelectorAll<HTMLElement>('.form-step');
+  const stepIndicators = document.querySelectorAll<HTMLElement>('.step-indicator');
+  const prevBtn = document.getElementById('prev-step-btn');
+  const nextBtn = document.getElementById('next-step-btn');
+  const submitBtn = document.getElementById('submit-quote-btn');
+  const reviewSummary = document.getElementById('review-summary');
+  const form = document.getElementById('quote-multistep-form') as HTMLFormElement | null;
+  const statusBox = document.getElementById('quote-status-box');
+
+  const updateStepperUI = () => {
+    formSteps.forEach((step, idx) => {
+      if (idx + 1 === currentStep) {
+        step.classList.remove('hidden');
+      } else {
+        step.classList.add('hidden');
+      }
+    });
+
+    stepIndicators.forEach((ind, idx) => {
+      const stepNum = idx + 1;
+      const circle = ind.querySelector('span');
+      if (stepNum <= currentStep) {
+        ind.classList.remove('opacity-50');
+        if (circle) circle.className = 'w-8 h-8 rounded-full bg-brand-gold text-brand-emerald font-bold text-xs flex items-center justify-center shadow-sm';
+      } else {
+        ind.classList.add('opacity-50');
+        if (circle) circle.className = 'w-8 h-8 rounded-full bg-brand-ivory border border-brand-gold/40 text-brand-charcoal font-bold text-xs flex items-center justify-center';
+      }
+    });
+
+    if (prevBtn) {
+      if (currentStep === 1) prevBtn.classList.add('hidden');
+      else prevBtn.classList.remove('hidden');
+    }
+
+    if (nextBtn && submitBtn) {
+      if (currentStep === totalSteps) {
+        nextBtn.classList.add('hidden');
+        submitBtn.classList.remove('hidden');
+        renderSummary();
+      } else {
+        nextBtn.classList.remove('hidden');
+        submitBtn.classList.add('hidden');
+      }
+    }
+  };
+
+  const validateCurrentStep = () => {
+    if (currentStep === 1) {
+      const name = (document.getElementById('q-name') as HTMLInputElement)?.value;
+      const email = (document.getElementById('q-email') as HTMLInputElement)?.value;
+      const phone = (document.getElementById('q-phone') as HTMLInputElement)?.value;
+      if (!name || !email || !phone) {
+        alert('Please fill out your full name, email, and phone number to continue.');
+        return false;
+      }
+    }
+    return true;
+  };
+
+  const renderSummary = () => {
+    if (!form || !reviewSummary) return;
+    const data = new FormData(form);
+
+    reviewSummary.innerHTML = `
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+          <span class="font-bold text-brand-emerald block">Primary Contact:</span>
+          <span>${data.get('name')} (${data.get('phone')})</span><br />
+          <span class="text-brand-charcoal-muted">${data.get('email')} • ${data.get('city')}</span>
+        </div>
+        <div>
+          <span class="font-bold text-brand-emerald block">Service Scope:</span>
+          <span>${data.get('service_type')}</span>
+        </div>
+        <div>
+          <span class="font-bold text-brand-emerald block">Travel Target:</span>
+          <span>${data.get('departure_month')}</span><br />
+          <span class="text-brand-charcoal-muted">${data.get('duration')}</span>
+        </div>
+        <div>
+          <span class="font-bold text-brand-emerald block">Pilgrim Count & Rooming:</span>
+          <span>${data.get('travelers_count')} Travelers • ${data.get('occupancy')}</span>
+        </div>
+      </div>
+    `;
+  };
+
+  nextBtn?.addEventListener('click', () => {
+    if (!validateCurrentStep()) return;
+    if (currentStep < totalSteps) {
+      currentStep++;
+      updateStepperUI();
+    }
+  });
+
+  prevBtn?.addEventListener('click', () => {
+    if (currentStep > 1) {
+      currentStep--;
+      updateStepperUI();
+    }
+  });
+
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!statusBox || !submitBtn || !form) return;
+
+    submitBtn.setAttribute('disabled', 'true');
+    submitBtn.textContent = 'Submitting Request...';
+
+    const data = new FormData(form);
+    const name = data.get('name') as string;
+    const phone = data.get('phone') as string;
+    const service = data.get('service_type') as string;
+    const month = data.get('departure_month') as string;
+    const duration = data.get('duration') as string;
+    const travelers = data.get('travelers_count') as string;
+
+    const summaryText = `Assalamu Alaikum Iconic Travel & Tours. Custom Quote Request:
+- Name: ${name}
+- Phone: ${phone}
+- Scope: ${service}
+- Season: ${month}
+- Duration: ${duration}
+- Travelers: ${travelers}`;
+
+    const waUrl = `https://wa.me/923322177752?text=${encodeURIComponent(summaryText)}`;
+
+    statusBox.classList.remove('hidden');
+    statusBox.className = 'p-6 rounded-2xl bg-emerald-50 border border-emerald-300 text-emerald-950 space-y-3';
+    statusBox.innerHTML = `
+      <h3 class="font-serif text-lg font-bold text-emerald-900">✓ Your Quote Request Has Been Prepared!</h3>
+      <p class="text-xs leading-relaxed">
+        Thank you, <strong>${name}</strong>. Our Karachi reservation department (GL #5247) will review room inventory and furnish a formal proposal.
+      </p>
+      <div class="pt-2">
+        <p class="text-xs font-semibold text-emerald-900 mb-2">Want instant priority response?</p>
+        <a href="${waUrl}" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#25D366] text-white font-bold text-xs uppercase tracking-wider shadow-sm">
+          <span>Forward to Karachi Desk on WhatsApp</span>
+        </a>
+      </div>
+    `;
+
+    submitBtn.textContent = 'Request Registered';
+  });
+</script>

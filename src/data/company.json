@@ -1,0 +1,42 @@
+{
+  "name": "Iconic Travel & Tours",
+  "license": "GL #5247",
+  "tagline": "YOUR COMFORT, OUR PRIORITY",
+  "brandMessage": "A Journey of Faith",
+  "arabicGreeting": "هَنِيئاً لَكُمْ العُمْرَة",
+  "bismillah": "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
+  "address": {
+    "street": "Office #502, Iconic Business Center",
+    "area": "Sharfabad",
+    "city": "Karachi",
+    "country": "Pakistan",
+    "full": "Office #502, Iconic Business Center, Sharfabad, Karachi, Pakistan."
+  },
+  "contacts": [
+    { "label": "Director / Primary Line", "number": "+92-332-2177752", "clean": "923322177752", "isWhatsApp": true },
+    { "label": "Group Coordinator", "number": "+92-321-9199999", "clean": "923219199999", "isWhatsApp": true },
+    { "label": "Customer Support Desk", "number": "+92-300-9222212", "clean": "923009222212", "isWhatsApp": true }
+  ],
+  "primaryWhatsApp": "923322177752",
+  "email": "inquiry@iconictravelandtours.com",
+  "website": "https://www.iconictravelandtours.com",
+  "domain": "www.iconictravelandtours.com",
+  "workingHours": "Monday – Saturday: 10:00 AM – 07:00 PM (PKT)",
+  "socials": {
+    "facebook": "https://facebook.com/iconictravelandtours",
+    "instagram": "https://instagram.com/iconictravelandtours",
+    "whatsapp": "https://wa.me/923322177752"
+  },
+  "affiliations": [
+    { "name": "Department of Tourist Services", "code": "GL #5247", "verified": true },
+    { "name": "TAAP (Travel Agents Association of Pakistan)", "code": "Member", "verified": true, "note": "Industry body association" },
+    { "name": "IATA Registered Entity Reference", "code": "Verified Entity Record", "verified": true, "note": "Partner ticketing network" }
+  ],
+  "campaigns": [
+    {
+      "title": "TECNO Umrah Group Tour 2026 / 1448 AH",
+      "note": "Brochure featured custom corporate delegation",
+      "breakfastSchedule": "06:30 AM – 10:00 AM (Ground Floor Dining Hall)"
+    }
+  ]
+}

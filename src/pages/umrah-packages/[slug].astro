@@ -1,0 +1,298 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import packages from '../../data/packages.json';
+import company from '../../data/company.json';
+
+export async function getStaticPaths() {
+  return packages.map((pkg) => ({
+    params: { slug: pkg.slug },
+    props: { pkg }
+  }));
+}
+
+const { pkg } = Astro.props;
+const whatsappInquiryUrl = `https://wa.me/${company.primaryWhatsApp}?text=${encodeURIComponent(`Assalamu Alaikum. I am interested in inquiring about the "${pkg.name}" (${pkg.durationDays} Days) package.`)}`;
+---
+
+<Layout
+  title={`${pkg.name} | Iconic Travel & Tours (GL #5247)`}
+  description={`${pkg.name} — ${pkg.durationDays} Days Umrah package. Includes ${pkg.makkahNights} nights Makkah (${pkg.makkahHotel}) and ${pkg.madinahNights} nights Madinah.`}
+  image={pkg.heroImage}
+>
+
+  <!-- Large Cinematic Hero Banner -->
+  <section class="relative min-h-[55vh] flex items-end bg-brand-emerald overflow-hidden pb-16">
+    <div class="absolute inset-0 z-0">
+      <img
+        src={pkg.heroImage}
+        alt={pkg.name}
+        class="w-full h-full object-cover scale-105"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-brand-forest via-brand-emerald/80 to-black/50"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-white space-y-4">
+      <!-- Breadcrumb -->
+      <nav class="flex items-center gap-2 text-xs font-mono text-brand-gold-light" aria-label="Breadcrumb">
+        <a href="/" class="hover:underline">Home</a>
+        <span>/</span>
+        <a href="/umrah-packages" class="hover:underline">Umrah Packages</a>
+        <span>/</span>
+        <span class="text-white font-semibold">{pkg.name}</span>
+      </nav>
+
+      <div class="flex flex-wrap items-center gap-3">
+        <span class="px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-brand-gold text-brand-emerald shadow-sm">
+          {pkg.category}
+        </span>
+        {pkg.tag && (
+          <span class="px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-brand-red text-white">
+            {pkg.tag}
+          </span>
+        )}
+        <span class="px-3 py-1 rounded-full text-xs font-mono bg-white/20 text-white backdrop-blur-sm border border-white/20">
+          Season: {pkg.departureMonth}
+        </span>
+      </div>
+
+      <h1 class="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold text-white max-w-4xl leading-tight">
+        {pkg.name}
+      </h1>
+
+      <p class="max-w-2xl text-sm sm:text-base text-brand-ivory/85 leading-relaxed">
+        {pkg.overview}
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Content & Sticky Inquiry Sidebar -->
+  <section class="py-16 bg-brand-ivory">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <!-- Left 8 Columns: Package Content Details -->
+        <div class="lg:col-span-8 space-y-12">
+          
+          <!-- Key Package Highlights Quick Grid -->
+          <div class="bg-white rounded-2xl p-6 sm:p-8 border border-brand-gold/20 shadow-sm grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+            <div>
+              <span class="block text-xs font-mono uppercase text-brand-charcoal-muted">Total Duration</span>
+              <span class="font-serif text-2xl font-bold text-brand-emerald">{pkg.durationDays} Days</span>
+            </div>
+            <div>
+              <span class="block text-xs font-mono uppercase text-brand-charcoal-muted">Makkah Nights</span>
+              <span class="font-serif text-2xl font-bold text-brand-emerald">{pkg.makkahNights} Nights</span>
+            </div>
+            <div>
+              <span class="block text-xs font-mono uppercase text-brand-charcoal-muted">Madinah Nights</span>
+              <span class="font-serif text-2xl font-bold text-brand-emerald">{pkg.madinahNights} Nights</span>
+            </div>
+            <div>
+              <span class="block text-xs font-mono uppercase text-brand-charcoal-muted">Availability</span>
+              <span class="font-serif text-sm font-bold text-brand-gold-dark mt-2 block">{pkg.availability}</span>
+            </div>
+          </div>
+
+          <!-- Hotel Accommodation Section -->
+          <div class="space-y-4">
+            <h2 class="font-serif text-2xl font-bold text-brand-emerald border-b border-brand-gold/20 pb-3">
+              Accommodation & Logistics
+            </h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div class="bg-white p-6 rounded-2xl border border-brand-gold/20 space-y-2">
+                <span class="text-xs font-mono uppercase tracking-wider text-brand-gold-dark font-semibold">Makkah Sanctuary</span>
+                <h3 class="font-serif text-lg font-bold text-brand-emerald">{pkg.makkahHotel}</h3>
+                <p class="text-xs text-brand-charcoal-muted leading-relaxed">
+                  Carefully selected for effortless walking proximity to the Grand Mosque courtyard. Daily breakfast buffet included.
+                </p>
+              </div>
+
+              <div class="bg-white p-6 rounded-2xl border border-brand-gold/20 space-y-2">
+                <span class="text-xs font-mono uppercase tracking-wider text-brand-gold-dark font-semibold">Madinah Sanctuary</span>
+                <h3 class="font-serif text-lg font-bold text-brand-emerald">{pkg.madinahHotel}</h3>
+                <p class="text-xs text-brand-charcoal-muted leading-relaxed">
+                  Positioned in the prime central Markazia district directly bordering the Prophet's Mosque courtyard and ladies' prayer gates.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-2xl border border-brand-gold/20 flex items-center gap-4">
+              <div class="w-10 h-10 rounded-full bg-brand-emerald/10 text-brand-emerald flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                </svg>
+              </div>
+              <div class="text-xs">
+                <span class="font-bold text-brand-emerald block text-sm">Ground Transportation Standard</span>
+                <span class="text-brand-charcoal-muted">{pkg.transport}</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Day-by-Day Itinerary -->
+          <div class="space-y-6">
+            <h2 class="font-serif text-2xl font-bold text-brand-emerald border-b border-brand-gold/20 pb-3">
+              Detailed Day-by-Day Itinerary
+            </h2>
+
+            <div class="space-y-4">
+              {pkg.itinerary.map((item) => (
+                <div class="bg-white p-6 rounded-2xl border border-brand-gold/20 shadow-sm flex flex-col sm:flex-row sm:items-start gap-4">
+                  <span class="w-20 font-serif text-lg font-bold text-brand-gold-dark flex-shrink-0">
+                    Day {item.day}
+                  </span>
+                  <div class="space-y-1">
+                    <h3 class="font-serif text-base font-bold text-brand-emerald">{item.title}</h3>
+                    <p class="text-xs text-brand-charcoal-muted leading-relaxed">{item.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Included and Excluded Services -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Included -->
+            <div class="bg-white p-6 rounded-2xl border border-brand-gold/20 space-y-4">
+              <h3 class="font-serif text-lg font-bold text-brand-emerald flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                <span>Services Included</span>
+              </h3>
+              <ul class="space-y-2.5 text-xs text-brand-charcoal-muted">
+                {pkg.included.map((inc) => (
+                  <li class="flex items-start gap-2">
+                    <svg class="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>{inc}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <!-- Excluded -->
+            <div class="bg-white p-6 rounded-2xl border border-brand-gold/20 space-y-4">
+              <h3 class="font-serif text-lg font-bold text-brand-emerald flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-red-400"></span>
+                <span>Services Excluded</span>
+              </h3>
+              <ul class="space-y-2.5 text-xs text-brand-charcoal-muted">
+                {pkg.excluded.map((exc) => (
+                  <li class="flex items-start gap-2">
+                    <svg class="w-4 h-4 text-red-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                    <span>{exc}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+
+        <!-- Right 4 Columns: Sticky Booking & Inquiry Card -->
+        <div class="lg:col-span-4 space-y-6">
+          <div class="sticky top-28 bg-white rounded-3xl p-6 sm:p-8 border border-brand-gold/30 shadow-luxury space-y-6">
+            
+            <div class="border-b border-brand-gold/20 pb-4">
+              <span class="text-[10px] font-mono uppercase tracking-wider text-brand-gold-dark font-semibold">
+                Transparent Pricing Standard
+              </span>
+              <div class="font-serif text-2xl sm:text-3xl font-bold text-brand-emerald mt-1">
+                {pkg.pricePlaceholder}
+              </div>
+              <p class="text-[11px] text-brand-charcoal-muted mt-1 leading-snug">
+                {pkg.priceNote || "Rates vary according to airline booking class and hotel room occupancy."}
+              </p>
+            </div>
+
+            <!-- Direct Inquiry Form -->
+            <form action="https://formspree.io/f/placeholder" method="POST" class="space-y-4" id="package-inquiry-form">
+              <input type="hidden" name="package_name" value={pkg.name} />
+              <input type="hidden" name="duration" value={`${pkg.durationDays} Days`} />
+
+              <div>
+                <label for="p-name" class="block text-xs font-semibold text-brand-charcoal mb-1">Your Full Name *</label>
+                <input
+                  type="text"
+                  id="p-name"
+                  name="full_name"
+                  required
+                  placeholder="e.g. Tariq Mehmood"
+                  class="w-full text-xs rounded-xl border-brand-gold/30 bg-brand-ivory/50 text-brand-charcoal py-2.5 px-3 focus:ring-brand-gold focus:border-brand-gold"
+                />
+              </div>
+
+              <div>
+                <label for="p-phone" class="block text-xs font-semibold text-brand-charcoal mb-1">WhatsApp / Phone *</label>
+                <input
+                  type="tel"
+                  id="p-phone"
+                  name="phone"
+                  required
+                  placeholder="+92 300 1234567"
+                  class="w-full text-xs rounded-xl border-brand-gold/30 bg-brand-ivory/50 text-brand-charcoal py-2.5 px-3 focus:ring-brand-gold focus:border-brand-gold"
+                />
+              </div>
+
+              <div class="grid grid-cols-2 gap-3">
+                <div>
+                  <label for="p-travelers" class="block text-xs font-semibold text-brand-charcoal mb-1">Travelers *</label>
+                  <select id="p-travelers" name="travelers" class="w-full text-xs rounded-xl border-brand-gold/30 bg-brand-ivory/50 text-brand-charcoal py-2.5 px-2">
+                    <option value="1">1 Person</option>
+                    <option value="2">2 Persons</option>
+                    <option value="3-4">3–4 Persons</option>
+                    <option value="5+">5+ Family Group</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="p-room" class="block text-xs font-semibold text-brand-charcoal mb-1">Room Sharing</label>
+                  <select id="p-room" name="room_sharing" class="w-full text-xs rounded-xl border-brand-gold/30 bg-brand-ivory/50 text-brand-charcoal py-2.5 px-2">
+                    <option value="Double">Double</option>
+                    <option value="Triple">Triple</option>
+                    <option value="Quad">Quad</option>
+                    <option value="Family Suite">Family Suite</option>
+                  </select>
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                class="w-full py-3.5 px-4 rounded-xl text-xs font-bold uppercase tracking-wider bg-brand-emerald text-brand-gold hover:bg-brand-forest shadow-md transition-all text-center"
+              >
+                Inquire For This Package
+              </button>
+            </form>
+
+            <div class="pt-2 text-center">
+              <span class="text-xs text-brand-charcoal-muted">or chat immediately:</span>
+              <a
+                href={whatsappInquiryUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="mt-2 w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs font-bold uppercase tracking-wider bg-[#25D366] text-white hover:brightness-105 shadow-sm transition-all"
+              >
+                <span>WhatsApp Instant Inquiry</span>
+              </a>
+            </div>
+
+            <!-- Hotline numbers -->
+            <div class="pt-4 border-t border-brand-gold/15 text-center text-xs text-brand-charcoal-muted space-y-1">
+              <p class="font-semibold text-brand-emerald">Iconic Reservation Desk (Karachi):</p>
+              <p><a href="tel:+923322177752" class="hover:underline font-mono">+92-332-2177752</a></p>
+              <p><a href="tel:+923219199999" class="hover:underline font-mono">+92-321-9199999</a></p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</Layout>

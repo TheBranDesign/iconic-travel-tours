@@ -1,0 +1,174 @@
+---
+import packages from '../data/packages.json';
+import destinations from '../data/destinations.json';
+import services from '../data/services.json';
+import ziyarat from '../data/ziyarat.json';
+
+const searchIndex = [
+  ...packages.map(p => ({
+    title: p.name,
+    category: 'Package',
+    tag: p.category,
+    desc: p.overview,
+    url: `/umrah-packages/${p.slug}`
+  })),
+  ...destinations.map(d => ({
+    title: d.name,
+    category: 'Destination',
+    tag: d.arabicTitle,
+    desc: d.intro,
+    url: `/destinations/${d.slug}`
+  })),
+  ...services.map(s => ({
+    title: s.title,
+    category: 'Service',
+    tag: 'Hospitality',
+    desc: s.short,
+    url: `/services#${s.slug}`
+  })),
+  ...ziyarat.map(z => ({
+    title: z.name,
+    category: 'Ziyarat Guide',
+    tag: z.city,
+    desc: z.short,
+    url: `/ziyarat-guide`
+  }))
+];
+---
+
+<div
+  id="search-modal"
+  class="fixed inset-0 z-50 flex items-start justify-center pt-20 px-4 bg-black/80 backdrop-blur-md hidden transition-opacity"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="search-modal-title"
+>
+  <div class="relative w-full max-w-2xl bg-brand-forest border border-brand-gold/30 rounded-2xl shadow-luxury-lg overflow-hidden flex flex-col max-h-[80vh]">
+    
+    <!-- Header Input Box -->
+    <div class="p-4 border-b border-brand-gold/20 flex items-center gap-3 bg-brand-emerald">
+      <svg class="w-5 h-5 text-brand-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+      </svg>
+      <input
+        type="search"
+        id="search-input"
+        placeholder="Search Umrah packages, holy sites, services, guides..."
+        class="w-full bg-transparent border-0 text-white placeholder-brand-ivory/50 focus:outline-none focus:ring-0 text-base"
+        autocomplete="off"
+      />
+      <button
+        type="button"
+        id="search-close-btn"
+        class="text-brand-ivory/60 hover:text-brand-gold p-1 rounded-lg"
+        aria-label="Close search"
+      >
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Live Search Results Container -->
+    <div id="search-results" class="p-4 overflow-y-auto space-y-2 divide-y divide-white/5 text-sm">
+      <p class="text-xs text-brand-ivory/60 py-2">Type above to discover packages, Ziyarat landmarks, and guides.</p>
+    </div>
+
+    <!-- Quick Shortcuts Footer -->
+    <div class="px-4 py-2.5 bg-brand-charcoal/50 border-t border-brand-gold/15 flex items-center justify-between text-[11px] text-brand-ivory/60">
+      <div class="flex items-center gap-3">
+        <span>Suggested:</span>
+        <button type="button" class="search-tag-chip text-brand-gold hover:underline">Ramadan</button>
+        <button type="button" class="search-tag-chip text-brand-gold hover:underline">Makkah</button>
+        <button type="button" class="search-tag-chip text-brand-gold hover:underline">Madinah</button>
+        <button type="button" class="search-tag-chip text-brand-gold hover:underline">Ziyarat</button>
+      </div>
+      <span>Press <kbd class="px-1.5 py-0.5 rounded bg-black/40 border border-white/20 font-mono text-[10px]">ESC</kbd> to exit</span>
+    </div>
+
+  </div>
+</div>
+
+<script define:vars={{ searchIndex }}>
+  const modal = document.getElementById('search-modal');
+  const triggerBtn = document.getElementById('search-trigger-btn');
+  const closeBtn = document.getElementById('search-close-btn');
+  const searchInput = document.getElementById('search-input');
+  const resultsContainer = document.getElementById('search-results');
+  const tagChips = document.querySelectorAll('.search-tag-chip');
+
+  const openModal = () => {
+    if (!modal) return;
+    modal.classList.remove('hidden');
+    setTimeout(() => searchInput?.focus(), 50);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeModal = () => {
+    if (!modal) return;
+    modal.classList.add('hidden');
+    if (searchInput) searchInput.value = '';
+    document.body.style.overflow = '';
+  };
+
+  triggerBtn?.addEventListener('click', openModal);
+  closeBtn?.addEventListener('click', closeModal);
+
+  // Close on outside click
+  modal?.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  // Keyboard escape
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !modal?.classList.contains('hidden')) {
+      closeModal();
+    }
+  });
+
+  const renderResults = (query) => {
+    if (!resultsContainer) return;
+    const q = query.trim().toLowerCase();
+
+    if (!q) {
+      resultsContainer.innerHTML = '<p class="text-xs text-brand-ivory/60 py-2">Type above to search packages, sacred sites, and services.</p>';
+      return;
+    }
+
+    const matches = searchIndex.filter(item => 
+      item.title.toLowerCase().includes(q) ||
+      item.desc.toLowerCase().includes(q) ||
+      item.category.toLowerCase().includes(q) ||
+      item.tag.toLowerCase().includes(q)
+    );
+
+    if (matches.length === 0) {
+      resultsContainer.innerHTML = `<div class="py-6 text-center text-brand-ivory/60"><p>No results found matching "<strong>${query}</strong>".</p><p class="text-xs mt-1">Try searching for Makkah, Madinah, Ramadan, or Group Tours.</p></div>`;
+      return;
+    }
+
+    resultsContainer.innerHTML = matches.map(item => `
+      <a href="${item.url}" class="block p-3 rounded-xl hover:bg-white/5 transition-colors group">
+        <div class="flex items-center justify-between">
+          <h4 class="font-serif text-base text-brand-gold group-hover:text-brand-gold-light font-semibold">${item.title}</h4>
+          <span class="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-brand-gold/15 text-brand-gold border border-brand-gold/30">${item.category}</span>
+        </div>
+        <p class="text-xs text-brand-ivory/70 line-clamp-2 mt-1">${item.desc}</p>
+      </a>
+    `).join('');
+  };
+
+  searchInput?.addEventListener('input', (e) => {
+    renderResults(e.target.value);
+  });
+
+  tagChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      const text = chip.textContent || '';
+      if (searchInput) {
+        searchInput.value = text;
+        renderResults(text);
+      }
+    });
+  });
+</script>

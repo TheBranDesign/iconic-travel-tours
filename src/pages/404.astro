@@ -1,0 +1,67 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Page Not Found | Iconic Travel & Tours (GL #5247)"
+  description="The requested page could not be found. Return to Iconic Travel & Tours homepage to explore Umrah packages and travel guides."
+>
+
+  <section class="min-h-[75vh] flex items-center justify-center py-20 bg-brand-emerald text-white text-center relative overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img
+        src="/images/makkah-panoramic.jpg"
+        alt="Sacred landscape"
+        class="w-full h-full object-cover opacity-15 scale-105"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-brand-emerald/90 via-brand-emerald/95 to-brand-forest"></div>
+    </div>
+
+    <div class="relative z-10 max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+      
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-gold/15 text-brand-gold border border-brand-gold/30 text-xs font-mono uppercase tracking-widest">
+        404 — Page Not Found
+      </div>
+
+      <h1 class="font-serif text-5xl sm:text-7xl font-bold text-brand-ivory leading-none">
+        Seeking the Path
+      </h1>
+
+      <p class="font-arabic text-2xl text-brand-gold-light" dir="rtl">
+        اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ
+      </p>
+
+      <p class="text-sm sm:text-base text-brand-ivory/80 leading-relaxed font-light">
+        The destination or resource you were looking for does not exist or may have been relocated. Allow us to guide you back to our sacred journeys.
+      </p>
+
+      <div class="pt-4 flex flex-wrap items-center justify-center gap-4">
+        <a
+          href="/"
+          class="px-8 py-3.5 rounded-full text-xs font-bold uppercase tracking-widest bg-gradient-to-r from-brand-gold via-brand-gold-light to-brand-gold-dark text-brand-emerald hover:brightness-110 shadow-gold-glow transition-all"
+        >
+          Return to Homepage
+        </a>
+        <a
+          href="/umrah-packages"
+          class="px-8 py-3.5 rounded-full text-xs font-bold uppercase tracking-widest bg-white/10 hover:bg-white/20 text-white border border-brand-gold/40 transition-all"
+        >
+          Explore Packages
+        </a>
+      </div>
+
+      <!-- Quick Helpful Navigation Links -->
+      <div class="pt-8 border-t border-brand-gold/20 flex flex-wrap items-center justify-center gap-6 text-xs text-brand-gold-light">
+        <a href="/destinations" class="hover:underline">Destinations</a>
+        <span>•</span>
+        <a href="/ziyarat-guide" class="hover:underline">Ziyarat Guide</a>
+        <span>•</span>
+        <a href="/travel-guide" class="hover:underline">Travel Guide</a>
+        <span>•</span>
+        <a href="/contact" class="hover:underline">Contact Desk</a>
+      </div>
+
+    </div>
+  </section>
+
+</Layout>

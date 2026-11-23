@@ -1,0 +1,725 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PackageCard from '../components/PackageCard.astro';
+import packages from '../data/packages.json';
+import destinations from '../data/destinations.json';
+import services from '../data/services.json';
+import testimonials from '../data/testimonials.json';
+import gallery from '../data/gallery.json';
+import company from '../data/company.json';
+
+const featuredPackages = packages.filter(p => p.featured).slice(0, 3);
+const previewGallery = gallery.slice(0, 6);
+---
+
+<Layout
+  title="Iconic Travel & Tours (GL #5247) | Experience the Journey. Embrace the Blessing."
+  description="Iconic Travel & Tours — Licensed Umrah specialists (GL #5247) based in Karachi. Dedicated group assistance, luxury hotels in Makkah & Madinah, and spiritually uplifting journeys."
+>
+
+  <!-- SECTION 1: CINEMATIC HERO -->
+  <section class="relative min-h-[92vh] flex items-center justify-center overflow-hidden bg-brand-emerald">
+    
+    <!-- Background Media with Ken Burns cinematic zoom -->
+    <div class="absolute inset-0 z-0">
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        poster="/images/hero-kaaba-tawaf.jpg"
+        class="w-full h-full object-cover scale-105 animate-[pulse_10s_ease-in-out_infinite]"
+      >
+        <source src="/videos/hero-cinematic.mp4" type="video/mp4" />
+        <img
+          src="/images/hero-kaaba-tawaf.jpg"
+          alt="Pilgrims performing Tawaf around the Holy Kaaba at night"
+          class="w-full h-full object-cover"
+        />
+      </video>
+
+      <!-- Multi-layer Luxury Vignette & Emerald Overlays -->
+      <div class="absolute inset-0 bg-gradient-to-t from-brand-forest via-brand-emerald/75 to-black/60"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(6,61,48,0.85)_100%)]"></div>
+    </div>
+
+    <!-- Hero Content Card -->
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white py-16">
+      
+      <!-- Arabic Greeting & Bismillah Motif -->
+      <div class="inline-flex flex-col items-center gap-2 mb-6">
+        <span class="font-arabic text-2xl sm:text-3xl text-brand-gold tracking-widest" dir="rtl">
+          {company.bismillah}
+        </span>
+        <div class="flex items-center gap-3">
+          <span class="h-[1px] w-8 bg-brand-gold/60"></span>
+          <span class="text-xs uppercase tracking-[0.3em] text-brand-gold font-semibold font-mono">
+            YOUR JOURNEY, OUR COMMITMENT
+          </span>
+          <span class="h-[1px] w-8 bg-brand-gold/60"></span>
+        </div>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-brand-ivory leading-[1.1] mb-6">
+        EXPERIENCE THE JOURNEY.<br />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold-light via-brand-gold to-brand-gold-dark italic">
+          EMBRACE THE BLESSING.
+        </span>
+      </h1>
+
+      <!-- Description -->
+      <p class="max-w-2xl mx-auto text-base sm:text-lg text-brand-ivory/85 font-light leading-relaxed mb-10">
+        From the first step of your journey to your return home, Iconic Travel & Tours is dedicated to making every moment comfortable, meaningful and memorable.
+      </p>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a
+          href="/umrah-packages"
+          class="w-full sm:w-auto px-8 py-4 rounded-full text-xs font-bold tracking-widest uppercase bg-gradient-to-r from-brand-gold via-brand-gold-light to-brand-gold-dark text-brand-emerald hover:brightness-110 shadow-gold-glow transition-all transform hover:-translate-y-0.5"
+        >
+          EXPLORE UMRAH PACKAGES
+        </a>
+        <a
+          href="/request-a-quote"
+          class="w-full sm:w-auto px-8 py-4 rounded-full text-xs font-bold tracking-widest uppercase bg-white/10 hover:bg-white/20 text-brand-ivory border border-brand-gold/40 backdrop-blur-sm transition-all transform hover:-translate-y-0.5"
+        >
+          PLAN YOUR JOURNEY
+        </a>
+      </div>
+
+      <!-- Accreditation Quick Trust Badges -->
+      <div class="mt-14 pt-8 border-t border-brand-gold/20 flex flex-wrap items-center justify-center gap-6 text-xs text-brand-ivory/70">
+        <span class="flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-brand-gold"></span>
+          Govt Registered License <strong class="text-brand-gold">GL #5247</strong>
+        </span>
+        <span class="flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-brand-gold"></span>
+          Direct Walking Distance Hotels in Makkah & Madinah
+        </span>
+        <span class="flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-brand-gold"></span>
+          24/7 Dedicated Group Leader Support
+        </span>
+      </div>
+    </div>
+
+    <!-- Elegant Scroll Indicator -->
+    <a
+      href="#brand-intro"
+      class="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-brand-gold hover:text-brand-gold-light transition-colors group"
+      aria-label="Scroll to company introduction"
+    >
+      <span class="text-[10px] tracking-widest uppercase font-mono">Discover</span>
+      <div class="w-5 h-9 rounded-full border-2 border-brand-gold/40 flex items-start justify-center p-1 group-hover:border-brand-gold">
+        <span class="w-1 h-2 rounded-full bg-brand-gold animate-bounce"></span>
+      </div>
+    </a>
+  </section>
+
+
+  <!-- SECTION 2: BRAND INTRODUCTION (Asymmetric Editorial Layout) -->
+  <section id="brand-intro" class="py-24 bg-brand-ivory relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        
+        <!-- Left Column: Editorial Copy -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.25em] text-brand-gold-dark font-semibold">
+            <span>License GL #5247</span>
+            <span>•</span>
+            <span>Karachi, Pakistan</span>
+          </div>
+
+          <h2 class="font-serif text-3xl sm:text-5xl font-bold text-brand-emerald leading-tight">
+            MORE THAN A JOURNEY.<br />
+            <span class="italic text-brand-gold-dark font-normal">A COMMITMENT TO YOU.</span>
+          </h2>
+
+          <p class="text-base sm:text-lg text-brand-charcoal-light leading-relaxed">
+            Iconic Travel & Tours was founded on an enduring conviction: that performing Umrah is among the most profound spiritual chapters in a believer’s life. It demands more than routine ticketing—it calls for empathy, reverence, and flawless logistical stewardship.
+          </p>
+
+          <p class="text-sm text-brand-charcoal-muted leading-relaxed">
+            From our headquarters in Sharfabad, Karachi, our specialized coordinators curate seamless journeys to the Holy Sanctuaries of Makkah al-Mukarramah and Al-Madinah al-Munawwarah. Through close proximity hotel partnerships, dependable luxury fleet transportation, and veteran tour directors, we eliminate travel anxieties so your spirit can fully immerse in the divine blessing.
+          </p>
+
+          <!-- Core Value Cards -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+            <div class="p-5 rounded-2xl bg-white border border-brand-gold/20 shadow-sm space-y-1.5">
+              <span class="font-serif text-lg font-bold text-brand-emerald">Reverence in Guidance</span>
+              <p class="text-xs text-brand-charcoal-muted">Authentic Sunnah-aligned instructions provided by knowledgeable guides for every ritual.</p>
+            </div>
+            <div class="p-5 rounded-2xl bg-white border border-brand-gold/20 shadow-sm space-y-1.5">
+              <span class="font-serif text-lg font-bold text-brand-emerald">Your Comfort, Our Priority</span>
+              <p class="text-xs text-brand-charcoal-muted">Uncompromising standards in hospitality, breakfast buffets, and private intercity transit.</p>
+            </div>
+          </div>
+
+          <div class="pt-2">
+            <a
+              href="/about"
+              class="inline-flex items-center gap-2 text-xs uppercase tracking-widest font-bold text-brand-emerald hover:text-brand-gold-dark transition-colors group"
+            >
+              <span>Learn More About Our Philosophy</span>
+              <span class="transform group-hover:translate-x-1 transition-transform">→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Asymmetric Imagery Framing -->
+        <div class="lg:col-span-5 relative">
+          <!-- Decorative golden arch silhouette background -->
+          <div class="relative rounded-3xl overflow-hidden shadow-luxury-lg border-2 border-brand-gold/30">
+            <img
+              src="/images/makkah-panoramic.jpg"
+              alt="Masjid al-Haram Grand Mosque and Clock Tower"
+              class="w-full h-[480px] object-cover"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+            
+            <!-- Bottom Quote Badge -->
+            <div class="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-brand-emerald/90 backdrop-blur-md border border-brand-gold/30 text-white">
+              <p class="font-arabic text-lg text-brand-gold-light" dir="rtl">
+                "هنيئاً لكم العمرة • تقبل الله طاعتكم"
+              </p>
+              <p class="text-xs text-brand-ivory/80 mt-1 italic">
+                May Allah accept your Umrah and make it a means of blessings and forgiveness.
+              </p>
+            </div>
+          </div>
+
+          <!-- Floating Secondary Visual Accent -->
+          <div class="hidden sm:block absolute -bottom-6 -left-8 w-44 rounded-2xl overflow-hidden border-4 border-white shadow-luxury">
+            <img
+              src="/images/madinah-green-dome.jpg"
+              alt="Prophet's Mosque Green Dome"
+              class="w-full h-32 object-cover"
+            />
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- SECTION 3: FEATURED EXPERIENCES (Image-Led Destination Discovery) -->
+  <section class="py-24 bg-brand-forest text-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+        <div>
+          <span class="text-xs uppercase font-mono tracking-[0.25em] text-brand-gold font-semibold">
+            Signature Journeys
+          </span>
+          <h2 class="font-serif text-3xl sm:text-5xl font-bold text-brand-ivory mt-2">
+            Curated Pilgrimage Experiences
+          </h2>
+        </div>
+        <a
+          href="/umrah-packages"
+          class="inline-flex items-center gap-2 text-xs uppercase tracking-widest font-bold text-brand-gold hover:text-white transition-colors"
+        >
+          <span>View All 2026 / 1448 AH Packages</span>
+          <span>→</span>
+        </a>
+      </div>
+
+      <!-- Package Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {featuredPackages.map((pkg) => (
+          <PackageCard pkg={pkg} />
+        ))}
+      </div>
+
+      <!-- Campaign Highlight: TECNO Umrah Group Tour Banner -->
+      <div class="mt-16 rounded-3xl p-8 sm:p-10 bg-gradient-to-r from-brand-emerald to-[#041F17] border border-brand-gold/30 shadow-luxury-lg flex flex-col md:flex-row items-center justify-between gap-8">
+        <div class="space-y-3">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[10px] font-mono uppercase bg-brand-gold/20 text-brand-gold border border-brand-gold/30">
+            Featured Campaign Case
+          </div>
+          <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white">
+            TECNO Umrah Group Tour 2026 / 1448 AH
+          </h3>
+          <p class="text-sm text-brand-ivory/80 max-w-xl leading-relaxed">
+            Featured in our official brochure, our corporate and community group tours provide dedicated tour directors, organized ground-floor breakfast dining (06:30 AM – 10:00 AM), and seamless group airport transfers.
+          </p>
+        </div>
+        <div class="flex-shrink-0">
+          <a
+            href="/services#group-travel-management"
+            class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-xs font-bold tracking-widest uppercase bg-brand-gold text-brand-emerald hover:brightness-110 shadow-md transition-all"
+          >
+            <span>Learn About Group Services</span>
+            <span>→</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- SECTION 4: WHY CHOOSE ICONIC? (YOUR COMFORT. OUR PRIORITY.) -->
+  <section class="py-24 bg-brand-ivory relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <span class="text-xs uppercase font-mono tracking-[0.25em] text-brand-gold-dark font-semibold">
+          The Iconic Standard
+        </span>
+        <h2 class="font-serif text-3xl sm:text-5xl font-bold text-brand-emerald">
+          YOUR COMFORT. OUR PRIORITY.
+        </h2>
+        <p class="text-sm sm:text-base text-brand-charcoal-muted leading-relaxed">
+          Every detail of our travel management is built around ensuring peace of mind, punctuality, and dignified assistance for you and your family.
+        </p>
+      </div>
+
+      <!-- 6 Pillars Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Pillar 1 -->
+        <div class="bg-white rounded-2xl p-8 border border-brand-gold/20 shadow-sm hover:shadow-luxury transition-all duration-300 flex flex-col justify-between group">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-xl bg-brand-emerald/10 text-brand-emerald flex items-center justify-center group-hover:bg-brand-emerald group-hover:text-brand-gold transition-colors">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-brand-emerald">24/7 Group Assistance</h3>
+            <p class="text-xs text-brand-charcoal-muted leading-relaxed">
+              We are available round the clock to assist you with inquiries, health coordination, and on-ground logistics throughout your stay.
+            </p>
+          </div>
+          <div class="pt-6 border-t border-brand-ivory-dark mt-6 text-[11px] text-brand-gold-dark font-semibold uppercase tracking-wider">
+            Verified On-Ground Team
+          </div>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="bg-white rounded-2xl p-8 border border-brand-gold/20 shadow-sm hover:shadow-luxury transition-all duration-300 flex flex-col justify-between group">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-xl bg-brand-emerald/10 text-brand-emerald flex items-center justify-center group-hover:bg-brand-emerald group-hover:text-brand-gold transition-colors">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+              </svg>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-brand-emerald">Hotel Support</h3>
+            <p class="text-xs text-brand-charcoal-muted leading-relaxed">
+              We are here for any hotel-related assistance you may need, ensuring comfortable rooms and immediate Haram courtyard accessibility.
+            </p>
+          </div>
+          <div class="pt-6 border-t border-brand-ivory-dark mt-6 text-[11px] text-brand-gold-dark font-semibold uppercase tracking-wider">
+            5-Star & 4-Star Partners
+          </div>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="bg-white rounded-2xl p-8 border border-brand-gold/20 shadow-sm hover:shadow-luxury transition-all duration-300 flex flex-col justify-between group">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-xl bg-brand-emerald/10 text-brand-emerald flex items-center justify-center group-hover:bg-brand-emerald group-hover:text-brand-gold transition-colors">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+              </svg>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-brand-emerald">Transportation Support</h3>
+            <p class="text-xs text-brand-charcoal-muted leading-relaxed">
+              Timely and comfortable transport arrangements for the group in modern, air-conditioned executive coaches and private GMCs.
+            </p>
+          </div>
+          <div class="pt-6 border-t border-brand-ivory-dark mt-6 text-[11px] text-brand-gold-dark font-semibold uppercase tracking-wider">
+            Air-Conditioned Modern Fleet
+          </div>
+        </div>
+
+        <!-- Pillar 4 -->
+        <div class="bg-white rounded-2xl p-8 border border-brand-gold/20 shadow-sm hover:shadow-luxury transition-all duration-300 flex flex-col justify-between group">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-xl bg-brand-emerald/10 text-brand-emerald flex items-center justify-center group-hover:bg-brand-emerald group-hover:text-brand-gold transition-colors">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-brand-emerald">Dedicated Group Coordinator</h3>
+            <p class="text-xs text-brand-charcoal-muted leading-relaxed">
+              Please contact your designated group leader for any queries or help. You travel with seasoned companions who understand every procedure.
+            </p>
+          </div>
+          <div class="pt-6 border-t border-brand-ivory-dark mt-6 text-[11px] text-brand-gold-dark font-semibold uppercase tracking-wider">
+            Pakistani Tour Directors
+          </div>
+        </div>
+
+        <!-- Pillar 5 -->
+        <div class="bg-white rounded-2xl p-8 border border-brand-gold/20 shadow-sm hover:shadow-luxury transition-all duration-300 flex flex-col justify-between group">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-xl bg-brand-emerald/10 text-brand-emerald flex items-center justify-center group-hover:bg-brand-emerald group-hover:text-brand-gold transition-colors">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-brand-emerald">Makkah & Madinah Guidance</h3>
+            <p class="text-xs text-brand-charcoal-muted leading-relaxed">
+              Clear orientation for Tawaf, Sa'i, and Rawdah Shareef scheduling via the official Saudi Nusuk mobile portal.
+            </p>
+          </div>
+          <div class="pt-6 border-t border-brand-ivory-dark mt-6 text-[11px] text-brand-gold-dark font-semibold uppercase tracking-wider">
+            Nusuk Permit Assistance
+          </div>
+        </div>
+
+        <!-- Pillar 6 -->
+        <div class="bg-white rounded-2xl p-8 border border-brand-gold/20 shadow-sm hover:shadow-luxury transition-all duration-300 flex flex-col justify-between group">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-xl bg-brand-emerald/10 text-brand-emerald flex items-center justify-center group-hover:bg-brand-emerald group-hover:text-brand-gold transition-colors">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-brand-emerald">Personal Travel Assistance</h3>
+            <p class="text-xs text-brand-charcoal-muted leading-relaxed">
+              Individual care for elderly family members, wheelchair coordination, baggage handling, and special dietary requests.
+            </p>
+          </div>
+          <div class="pt-6 border-t border-brand-ivory-dark mt-6 text-[11px] text-brand-gold-dark font-semibold uppercase tracking-wider">
+            Elderly & Family Friendly
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- SECTION 5: MAKKAH & MADINAH IMMERSIVE DESTINATION SHOWCASE -->
+  <section class="py-24 bg-brand-emerald text-white relative overflow-hidden">
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
+      
+      <!-- Destination 1: Makkah al-Mukarramah -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-6 space-y-6">
+          <div class="inline-flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-brand-gold"></span>
+            <span class="text-xs font-mono uppercase tracking-[0.25em] text-brand-gold">The Holy Sanctuary</span>
+          </div>
+
+          <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white">
+            Makkah al-Mukarramah
+          </h2>
+          <p class="font-arabic text-2xl text-brand-gold-light" dir="rtl">مَكَّةُ المُكَرَّمَة</p>
+
+          <p class="text-sm sm:text-base text-brand-ivory/85 leading-relaxed">
+            The blessed birthplace of revelation and the focal point of over a billion hearts. Walk the marble grounds of Masjid al-Haram, perform Tawaf under the night sky, and draw closeness to the Almighty in the very valley where the Prophets walked.
+          </p>
+
+          <ul class="space-y-2.5 text-xs text-brand-ivory/80">
+            <li class="flex items-center gap-2">
+              <span class="text-brand-gold">✓</span> The Holy Kaaba & Maqam Ibrahim
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-brand-gold">✓</span> Abraj Al Bait Clock Tower & 0m Walking Distance Suites
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-brand-gold">✓</span> Sacred Valley of Mina, Muzdalifah & Mount Arafat
+            </li>
+          </ul>
+
+          <div class="pt-2">
+            <a
+              href="/destinations/makkah"
+              class="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs font-bold tracking-widest uppercase bg-brand-gold text-brand-emerald hover:brightness-110 transition-all shadow-md"
+            >
+              <span>Explore Makkah Guide</span>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 relative">
+          <div class="rounded-3xl overflow-hidden shadow-luxury-lg border border-brand-gold/30">
+            <img
+              src="/images/hero-kaaba-tawaf.jpg"
+              alt="Holy Kaaba at night"
+              class="w-full h-[420px] object-cover hover:scale-105 transition-transform duration-700"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Destination 2: Al-Madinah al-Munawwarah -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-6 order-2 lg:order-1 relative">
+          <div class="rounded-3xl overflow-hidden shadow-luxury-lg border border-brand-gold/30">
+            <img
+              src="/images/madinah-courtyard.jpg"
+              alt="Masjid an-Nabawi courtyard and umbrellas"
+              class="w-full h-[420px] object-cover hover:scale-105 transition-transform duration-700"
+            />
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 order-1 lg:order-2 space-y-6">
+          <div class="inline-flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-brand-gold"></span>
+            <span class="text-xs font-mono uppercase tracking-[0.25em] text-brand-gold">The City of Serenity</span>
+          </div>
+
+          <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white">
+            Al-Madinah al-Munawwarah
+          </h2>
+          <p class="font-arabic text-2xl text-brand-gold-light" dir="rtl">المَدِينَة المُنَوَّرَة</p>
+
+          <p class="text-sm sm:text-base text-brand-ivory/85 leading-relaxed">
+            The illuminated sanctuary where tranquility embraces every visitor. Present your greetings of Salaam at the noble resting place of the Messenger of Allah (peace be upon him), pray in the Garden of Paradise (Rawdah Shareef), and reflect among the umbrellas of the Prophet's Mosque.
+          </p>
+
+          <ul class="space-y-2.5 text-xs text-brand-ivory/80">
+            <li class="flex items-center gap-2">
+              <span class="text-brand-gold">✓</span> Masjid an-Nabawi & The Sacred Green Dome
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-brand-gold">✓</span> Masjid Quba (The First Mosque in Islam)
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-brand-gold">✓</span> Mount Uhud & The Memorial of the Martyrs
+            </li>
+          </ul>
+
+          <div class="pt-2">
+            <a
+              href="/destinations/madinah"
+              class="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs font-bold tracking-widest uppercase bg-brand-gold text-brand-emerald hover:brightness-110 transition-all shadow-md"
+            >
+              <span>Explore Madinah Guide</span>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- SECTION 6: THE ICONIC JOURNEY (6-Step Visual Timeline) -->
+  <section class="py-24 bg-brand-ivory relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
+        <span class="text-xs uppercase font-mono tracking-[0.25em] text-brand-gold-dark font-semibold">
+          Seamless Journey Architecture
+        </span>
+        <h2 class="font-serif text-3xl sm:text-5xl font-bold text-brand-emerald">
+          The Iconic Journey Timeline
+        </h2>
+        <p class="text-sm sm:text-base text-brand-charcoal-muted leading-relaxed">
+          From your initial consultation in Karachi to your joyous return home, our six-step methodology guarantees clarity, transparency, and serene travel.
+        </p>
+      </div>
+
+      <!-- 6 Steps Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative">
+        
+        <!-- Step 1 -->
+        <div class="bg-white rounded-2xl p-8 border border-brand-gold/20 shadow-sm relative space-y-4">
+          <span class="font-serif text-3xl font-bold text-brand-gold">01</span>
+          <h3 class="font-serif text-xl font-bold text-brand-emerald">Discover Your Journey</h3>
+          <p class="text-xs text-brand-charcoal-muted leading-relaxed">
+            Explore our curated seasonal Umrah packages, private VIP options, and corporate group tour schedules to find the timeline that aligns with your family.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="bg-white rounded-2xl p-8 border border-brand-gold/20 shadow-sm relative space-y-4">
+          <span class="font-serif text-3xl font-bold text-brand-gold">02</span>
+          <h3 class="font-serif text-xl font-bold text-brand-emerald">Discuss Your Requirements</h3>
+          <p class="text-xs text-brand-charcoal-muted leading-relaxed">
+            Speak directly with our Karachi reservation officers. We tailor room configurations, flight preferences, wheelchair support, and meal plans.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="bg-white rounded-2xl p-8 border border-brand-gold/20 shadow-sm relative space-y-4">
+          <span class="font-serif text-3xl font-bold text-brand-gold">03</span>
+          <h3 class="font-serif text-xl font-bold text-brand-emerald">Request Your Package</h3>
+          <p class="text-xs text-brand-charcoal-muted leading-relaxed">
+            Receive a formal transparent quotation, complete visa processing guidance, and guaranteed hotel vouchers vetted under GL #5247.
+          </p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="bg-white rounded-2xl p-8 border border-brand-gold/20 shadow-sm relative space-y-4">
+          <span class="font-serif text-3xl font-bold text-brand-gold">04</span>
+          <h3 class="font-serif text-xl font-bold text-brand-emerald">Prepare for Departure</h3>
+          <p class="text-xs text-brand-charcoal-muted leading-relaxed">
+            Attend our pre-departure orientation, receive your pilgrim pack, synchronize your Nusuk Rawdah permit, and meet your group leader.
+          </p>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="bg-white rounded-2xl p-8 border border-brand-gold/20 shadow-sm relative space-y-4">
+          <span class="font-serif text-3xl font-bold text-brand-gold">05</span>
+          <h3 class="font-serif text-xl font-bold text-brand-emerald">Experience Your Journey</h3>
+          <p class="text-xs text-brand-charcoal-muted leading-relaxed">
+            Perform Umrah with peaceful hearts. Enjoy 24/7 on-ground assistance, escorted Ziyarat tours, and daily breakfast hospitality.
+          </p>
+        </div>
+
+        <!-- Step 6 -->
+        <div class="bg-white rounded-2xl p-8 border border-brand-gold/20 shadow-sm relative space-y-4">
+          <span class="font-serif text-3xl font-bold text-brand-gold">06</span>
+          <h3 class="font-serif text-xl font-bold text-brand-emerald">Return with Memories</h3>
+          <p class="text-xs text-brand-charcoal-muted leading-relaxed">
+            Airport check-in assistance, facilitation of 5L Zamzam canisters, and safe return home with memories that inspire a lifetime of faith.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- SECTION 7: EDITORIAL VISUAL GALLERY -->
+  <section class="py-24 bg-brand-forest text-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+        <div>
+          <span class="text-xs uppercase font-mono tracking-[0.25em] text-brand-gold font-semibold">
+            Visual Storytelling
+          </span>
+          <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mt-2">
+            Glimpses of the Blessed Land
+          </h2>
+        </div>
+        <a
+          href="/gallery"
+          class="inline-flex items-center gap-2 text-xs uppercase tracking-widest font-bold text-brand-gold hover:text-white transition-colors"
+        >
+          <span>Open Full Masonry Gallery</span>
+          <span>→</span>
+        </a>
+      </div>
+
+      <!-- Preview Gallery Masonry Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {previewGallery.map((item) => (
+          <div class="relative group rounded-2xl overflow-hidden shadow-luxury border border-brand-gold/20 bg-black/40 h-72">
+            <img
+              src={item.image}
+              alt={item.title}
+              loading="lazy"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
+            <div class="absolute bottom-4 left-4 right-4 text-white">
+              <span class="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-brand-gold/20 text-brand-gold border border-brand-gold/30">
+                {item.category}
+              </span>
+              <h4 class="font-serif text-lg font-bold mt-1 text-brand-ivory">{item.title}</h4>
+              <p class="text-xs text-brand-ivory/70 line-clamp-1 mt-0.5">{item.caption}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- SECTION 8: TESTIMONIALS (With Honest Demonstration Labeling) -->
+  <section class="py-24 bg-brand-ivory relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <span class="text-xs uppercase font-mono tracking-[0.25em] text-brand-gold-dark font-semibold">
+          Pilgrim Voices & Trust
+        </span>
+        <h2 class="font-serif text-3xl sm:text-5xl font-bold text-brand-emerald">
+          What Our Travelers Say
+        </h2>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-gold/15 text-brand-gold-dark text-xs border border-brand-gold/30">
+          <svg class="w-3.5 h-3.5 text-brand-gold-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span>Demonstration Placeholders — To be updated with verified client feedback</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {testimonials.map((t) => (
+          <div class="bg-white rounded-2xl p-8 border border-brand-gold/20 shadow-sm flex flex-col justify-between space-y-6">
+            <div class="space-y-4">
+              <!-- Star rating -->
+              <div class="flex items-center gap-1 text-brand-gold">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+              <p class="text-sm text-brand-charcoal-light italic leading-relaxed">
+                "{t.quote}"
+              </p>
+            </div>
+            
+            <div class="pt-4 border-t border-brand-ivory-dark">
+              <h4 class="font-serif text-base font-bold text-brand-emerald">{t.author}</h4>
+              <p class="text-xs text-brand-charcoal-muted">{t.role} • {t.location}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- SECTION 9: FINAL CALL TO ACTION (YOUR BLESSED JOURNEY BEGINS HERE) -->
+  <section class="py-24 bg-gradient-to-r from-brand-emerald via-brand-forest to-[#041A14] text-white relative overflow-hidden">
+    <!-- Decorative background glow -->
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(199,166,106,0.15)_0%,transparent_60%)]"></div>
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-8">
+      <span class="font-arabic text-3xl text-brand-gold tracking-widest block" dir="rtl">
+        {company.arabicGreeting}
+      </span>
+
+      <h2 class="font-serif text-4xl sm:text-6xl font-bold text-white tracking-tight leading-tight">
+        YOUR BLESSED JOURNEY BEGINS HERE.
+      </h2>
+
+      <p class="max-w-2xl mx-auto text-base sm:text-lg text-brand-ivory/85 leading-relaxed">
+        Let Iconic Travel & Tours help you plan a comfortable and memorable journey. Speak to our Karachi reservation team today or build your personalized itinerary online.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+        <a
+          href="/request-a-quote"
+          class="w-full sm:w-auto px-8 py-4 rounded-full text-xs font-bold tracking-widest uppercase bg-gradient-to-r from-brand-gold via-brand-gold-light to-brand-gold-dark text-brand-emerald hover:brightness-110 shadow-gold-glow transition-all transform hover:-translate-y-0.5"
+        >
+          Request a Quote
+        </a>
+        <a
+          href="/contact"
+          class="w-full sm:w-auto px-8 py-4 rounded-full text-xs font-bold tracking-widest uppercase bg-white/10 hover:bg-white/20 text-brand-ivory border border-brand-gold/40 backdrop-blur-sm transition-all transform hover:-translate-y-0.5"
+        >
+          Contact Our Team
+        </a>
+      </div>
+
+      <div class="pt-8 text-xs text-brand-ivory/60 flex flex-wrap items-center justify-center gap-6">
+        <span>Head Office: Office #502, Iconic Business Center, Sharfabad, Karachi</span>
+        <span>•</span>
+        <span>Phone: +92-332-2177752</span>
+      </div>
+    </div>
+  </section>
+
+</Layout>

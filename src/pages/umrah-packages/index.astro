@@ -1,0 +1,191 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PackageCard from '../../components/PackageCard.astro';
+import packages from '../../data/packages.json';
+
+const categories = ['All Categories', 'Ramadan Special', 'Deluxe Family', 'Group Umrah', 'Economy Group', 'Tailored Private'];
+const durations = ['All Durations', '10 Days', '12 Days', '14 Days', '15 Days', '21 Days'];
+---
+
+<Layout
+  title="Umrah Packages 2026 / 1448 AH | Iconic Travel & Tours (GL #5247)"
+  description="Explore verified Umrah packages from Pakistan. Executive Ramadan, Deluxe Family, and Signature Group tours with luxury accommodation in Makkah and Madinah."
+>
+
+  <!-- Hero Header -->
+  <section class="relative py-20 bg-brand-emerald text-white overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img
+        src="/images/hero-kaaba-tawaf.jpg"
+        alt="Kaaba night prayer"
+        class="w-full h-full object-cover opacity-20 scale-105"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-brand-emerald/90 via-brand-emerald/95 to-brand-forest"></div>
+    </div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+      <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.25em] text-brand-gold">
+        <span>Verified Offerings</span>
+        <span>•</span>
+        <span>Season 2026 / 1448 AH</span>
+      </div>
+
+      <h1 class="font-serif text-4xl sm:text-6xl font-bold tracking-tight text-brand-ivory">
+        Discover Sacred Umrah Packages
+      </h1>
+
+      <p class="max-w-2xl mx-auto text-sm sm:text-base text-brand-ivory/80 leading-relaxed font-light">
+        Carefully designed itineraries pairing close-proximity 5-star & 4-star hotels with attentive group coordination and high-speed intercity transportation.
+      </p>
+
+      <!-- Demonstration Compliance Pill -->
+      <div class="pt-2">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] bg-brand-gold/15 text-brand-gold border border-brand-gold/30">
+          <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          Demonstration Content — Exact rates verified upon direct client quotation
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Filter & Package Directory -->
+  <section class="py-16 bg-brand-ivory">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      
+      <!-- Filter Bar -->
+      <div class="bg-white p-6 rounded-2xl border border-brand-gold/20 shadow-sm space-y-4">
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <h2 class="font-serif text-lg font-bold text-brand-emerald flex items-center gap-2">
+            <svg class="w-5 h-5 text-brand-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
+            </svg>
+            <span>Filter Packages</span>
+          </h2>
+          <span id="package-count" class="text-xs font-mono text-brand-gold-dark font-semibold">
+            Showing {packages.length} Packages
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
+          <!-- Category Filter -->
+          <div>
+            <label for="filter-category" class="block text-xs font-semibold text-brand-charcoal mb-1">Category</label>
+            <select id="filter-category" class="w-full text-xs rounded-xl border-brand-gold/30 bg-brand-ivory/50 text-brand-charcoal py-2.5 px-3 focus:ring-brand-gold focus:border-brand-gold">
+              {categories.map(c => <option value={c}>{c}</option>)}
+            </select>
+          </div>
+
+          <!-- Duration Filter -->
+          <div>
+            <label for="filter-duration" class="block text-xs font-semibold text-brand-charcoal mb-1">Duration</label>
+            <select id="filter-duration" class="w-full text-xs rounded-xl border-brand-gold/30 bg-brand-ivory/50 text-brand-charcoal py-2.5 px-3 focus:ring-brand-gold focus:border-brand-gold">
+              {durations.map(d => <option value={d}>{d}</option>)}
+            </select>
+          </div>
+
+          <!-- Travel Type Filter -->
+          <div>
+            <label for="filter-type" class="block text-xs font-semibold text-brand-charcoal mb-1">Travel Style</label>
+            <select id="filter-type" class="w-full text-xs rounded-xl border-brand-gold/30 bg-brand-ivory/50 text-brand-charcoal py-2.5 px-3 focus:ring-brand-gold focus:border-brand-gold">
+              <option value="All">All Travel Styles</option>
+              <option value="Group">Group Tours</option>
+              <option value="Family">Family Packages</option>
+              <option value="Private">Private VIP</option>
+            </select>
+          </div>
+
+          <!-- Reset Filter Button -->
+          <div class="flex items-end">
+            <button
+              type="button"
+              id="reset-filters-btn"
+              class="w-full py-2.5 px-4 rounded-xl text-xs font-semibold uppercase tracking-wider bg-brand-forest text-brand-gold hover:bg-brand-emerald transition-colors"
+            >
+              Reset Filters
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Packages Grid -->
+      <div id="packages-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {packages.map((pkg) => (
+          <div
+            class="package-item"
+            data-category={pkg.category}
+            data-duration={`${pkg.durationDays} Days`}
+            data-type={pkg.travelType}
+          >
+            <PackageCard pkg={pkg} />
+          </div>
+        ))}
+      </div>
+
+      <!-- No packages fallback -->
+      <div id="no-packages" class="hidden text-center py-16 bg-white rounded-2xl border border-brand-gold/20 p-8 space-y-4">
+        <p class="font-serif text-xl text-brand-emerald">No packages match your chosen filters.</p>
+        <p class="text-xs text-brand-charcoal-muted">Try resetting filters or request a bespoke quotation tailored to your exact dates.</p>
+        <a
+          href="/request-a-quote"
+          class="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider bg-brand-gold text-brand-emerald"
+        >
+          Request Custom Itinerary
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+</Layout>
+
+<script>
+  const categorySelect = document.getElementById('filter-category') as HTMLSelectElement | null;
+  const durationSelect = document.getElementById('filter-duration') as HTMLSelectElement | null;
+  const typeSelect = document.getElementById('filter-type') as HTMLSelectElement | null;
+  const resetBtn = document.getElementById('reset-filters-btn');
+  const countSpan = document.getElementById('package-count');
+  const items = document.querySelectorAll<HTMLElement>('.package-item');
+  const noPackages = document.getElementById('no-packages');
+
+  const applyFilters = () => {
+    const selectedCategory = categorySelect?.value || 'All Categories';
+    const selectedDuration = durationSelect?.value || 'All Durations';
+    const selectedType = typeSelect?.value || 'All';
+
+    let visibleCount = 0;
+
+    items.forEach(item => {
+      const cat = item.dataset.category || '';
+      const dur = item.dataset.duration || '';
+      const typ = item.dataset.type || '';
+
+      const matchCategory = selectedCategory === 'All Categories' || cat === selectedCategory;
+      const matchDuration = selectedDuration === 'All Durations' || dur === selectedDuration;
+      const matchType = selectedType === 'All' || typ.toLowerCase().includes(selectedType.toLowerCase());
+
+      if (matchCategory && matchDuration && matchType) {
+        item.style.display = 'block';
+        visibleCount++;
+      } else {
+        item.style.display = 'none';
+      }
+    });
+
+    if (countSpan) countSpan.textContent = `Showing ${visibleCount} Packages`;
+    if (noPackages) {
+      if (visibleCount === 0) noPackages.classList.remove('hidden');
+      else noPackages.classList.add('hidden');
+    }
+  };
+
+  categorySelect?.addEventListener('change', applyFilters);
+  durationSelect?.addEventListener('change', applyFilters);
+  typeSelect?.addEventListener('change', applyFilters);
+
+  resetBtn?.addEventListener('click', () => {
+    if (categorySelect) categorySelect.value = 'All Categories';
+    if (durationSelect) durationSelect.value = 'All Durations';
+    if (typeSelect) typeSelect.value = 'All';
+    applyFilters();
+  });
+</script>

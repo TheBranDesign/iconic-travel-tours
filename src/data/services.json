@@ -1,0 +1,107 @@
+[
+  {
+    "slug": "umrah-travel-arrangements",
+    "title": "Umrah Travel Arrangements",
+    "short": "Comprehensive Umrah visa, scheduled flights, and end-to-end journey logistics managed with meticulous care.",
+    "icon": "plane",
+    "image": "/images/flight-departure.jpg",
+    "description": "Performing Umrah is a life-defining journey of the spirit. Iconic Travel & Tours (GL #5247) ensures that every administrative, regulatory, and logistical requirement is handled flawlessly so that your focus remains solely on worship and spiritual elevation.",
+    "offerings": [
+      "Official Saudi Umrah & Tourist visa processing via authorized channels",
+      "Competitive air ticketing with leading carriers (Saudia, PIA, Emirates, Qatar Airways)",
+      "Pre-departure visa verification and Nusuk platform appointment synchronization",
+      "Custom itineraries for individual travelers, couples, and extended families",
+      "Dedicated documentation support and baggage allowance facilitation"
+    ]
+  },
+  {
+    "slug": "group-travel-management",
+    "title": "Group Travel Management",
+    "short": "Structured, dependable group tours led by experienced Pakistani tour directors for community and corporate groups.",
+    "icon": "users",
+    "image": "/images/madinah-courtyard.jpg",
+    "description": "Drawing from our proven expertise in managing large-scale delegations—such as our featured TECNO Umrah Group Tour 2026 / 1448 AH—Iconic Travel & Tours specializes in precision group movements that maintain individual comfort within organized collective care.",
+    "offerings": [
+      "Experienced group tour coordinators accompanying pilgrims throughout the trip",
+      "Structured daily prayer gatherings, Ziyarat departures, and return assemblies",
+      "Coordinated luggage check-in, room key pre-distribution, and luggage porterage",
+      "Group communication channels for real-time announcements and emergency contacts",
+      "Corporate incentives and family group discounts"
+    ]
+  },
+  {
+    "slug": "hotel-support",
+    "title": "Hotel Support & Luxury Booking",
+    "short": "Direct partnerships with verified hotels within direct walking distance of the Holy Mosques.",
+    "icon": "hotel",
+    "image": "/images/luxury-hotel-suite.jpg",
+    "description": "Nothing preserves your physical stamina for Ibadah more than immediate proximity to the Haram. We partner with handpicked 5-star and 4-star properties overlooking or steps away from the courtyard, guaranteeing confirmed bookings and prompt room allocations.",
+    "offerings": [
+      "Clock Tower and Abraj Al Bait premier Kaaba-view suites in Makkah",
+      "Central Markazia luxury hotels bordering the Prophet's Mosque courtyard in Madinah",
+      "24/7 on-ground hotel liaison to assist with room upgrades, housekeeping, and special requests",
+      "Interconnecting family suites and wheelchair-accessible rooms",
+      "Daily international and oriental breakfast buffets"
+    ]
+  },
+  {
+    "slug": "transportation-support",
+    "title": "Transportation Support & VIP Fleet",
+    "short": "Punctual, sanitized air-conditioned transport ranging from private GMC Yukons to luxury group coaches.",
+    "icon": "bus",
+    "image": "/images/vip-transport.jpg",
+    "description": "From your initial arrival at King Abdulaziz International Airport to your intercity transfers between Makkah and Madinah, our modern fleet guarantees smooth, timely, and air-conditioned travel under the supervision of vetted professional drivers.",
+    "offerings": [
+      "Private VIP GMC Yukon Denali and luxury sedans for personal delegations",
+      "Modern 49-seater air-conditioned luxury tour buses with luggage compartments",
+      "Haramain High-Speed Train ticket reservation (business and economy classes)",
+      "Punctual airport pick-up and drop-off with meet-and-assist greeters",
+      "Comprehensive intercity transfers along comfortable divided expressways"
+    ]
+  },
+  {
+    "slug": "ziyarat-guidance",
+    "title": "Ziyarat Arrangements & Guidance",
+    "short": "Spiritually uplifting, historically grounded visits to the sacred landmarks of Makkah and Madinah.",
+    "icon": "map-pin",
+    "image": "/images/jabal-al-noor.jpg",
+    "description": "Walk where the beloved Prophet (peace be upon him) and his noble Companions walked. Our curated Ziyarat excursions are led by knowledgeable religious guides who narrate the profound historical context behind each mountain, valley, and sanctuary.",
+    "offerings": [
+      "Makkah sacred sites: Jabal al-Noor, Jabal Thawr, Mina, Arafat, Muzdalifah, Jannat al-Mu'alla",
+      "Madinah sacred sites: Masjid Quba, Masjid al-Qiblatain, Mount Uhud & Martyrs' Cemetery, Jannat al-Baqi",
+      "Comfortable air-conditioned transport for all group and private Ziyarat",
+      "Flexible morning and late afternoon schedules to avoid midday heat",
+      "Accurate, respectful historical commentary aligned with Islamic tradition"
+    ]
+  },
+  {
+    "slug": "group-assistance-247",
+    "title": "24/7 Group Assistance & Dedicated Coordinator",
+    "short": "Round-the-clock peace of mind with active on-ground support officers in both holy cities.",
+    "icon": "clock",
+    "image": "/images/concierge-service.jpg",
+    "description": "As proudly stated on our brochure: 'We are here for you — Your comfort, our priority.' Pilgrims under Iconic Travel & Tours (GL #5247) never walk alone. Our dedicated group leaders and bilingual local staff are on standby 24 hours a day.",
+    "offerings": [
+      "24/7 direct telephone and WhatsApp hotline for every registered pilgrim",
+      "Dedicated group leader stationed at your hotel for immediate queries",
+      "Emergency medical liaison and prescription medicine assistance",
+      "Lost property tracking and official authority coordination",
+      "Elderly assistance, wheelchair facilitation, and specialized dietary guidance"
+    ]
+  },
+  {
+    "slug": "breakfast-dining-arrangements",
+    "title": "Breakfast & Group Dining Arrangements",
+    "short": "Nutritious, high-quality morning buffets arranged for our groups to start each day energized.",
+    "icon": "coffee",
+    "image": "/images/luxury-hotel-dining.jpg",
+    "description": "Featured in our 2026 group campaigns, our breakfast program ensures pilgrims begin their day with nourishing meals and warm tea before embarking on prayers and Ziyarat. Timed comfortably between 06:30 AM and 10:00 AM on the Ground Floor restaurant.",
+    "offerings": [
+      "Fresh international, continental, and traditional Pakistani/Arabian breakfast dishes",
+      "Designated dining hours (06:30 AM – 10:00 AM) aligned with post-Fajr schedules",
+      "Hygienic, comfortable dining hall environments on hotel premises",
+      "Special dietary considerations for diabetic or elderly pilgrims upon advance notice",
+      "Complimentary hot beverages, fresh dates, and Zamzam water"
+    ]
+  }
+]

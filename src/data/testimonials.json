@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "quote": "The coordination provided during our group tour was exemplary. Having a dedicated team stationed at our hotel made the entire experience peaceful and worry-free.",
+    "author": "Sample Client Testimonial Placeholder",
+    "role": "Group Umrah Pilgrim (Demo)",
+    "location": "Karachi, Pakistan",
+    "isPlaceholder": true,
+    "tag": "Demonstration Content"
+  },
+  {
+    "id": 2,
+    "quote": "Staying within direct walking distance of Masjid al-Haram allowed our elderly family members to attend every single prayer in the courtyard without physical exhaustion.",
+    "author": "Family Delegation Placeholder",
+    "role": "Family Package Traveler (Demo)",
+    "location": "Lahore, Pakistan",
+    "isPlaceholder": true,
+    "tag": "Demonstration Content"
+  },
+  {
+    "id": 3,
+    "quote": "From airport reception in Jeddah to the Haramain train to Madinah, the punctuality and attention to detail reflected true professionalism.",
+    "author": "Corporate Delegate Placeholder",
+    "role": "Executive Traveler (Demo)",
+    "location": "Islamabad, Pakistan",
+    "isPlaceholder": true,
+    "tag": "Demonstration Content"
+  }
+]

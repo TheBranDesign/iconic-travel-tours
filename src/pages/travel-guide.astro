@@ -1,0 +1,119 @@
+---
+import Layout from '../layouts/Layout.astro';
+import travelGuide from '../data/travelGuide.json';
+---
+
+<Layout
+  title="Umrah Travel Guide & Preparation | Iconic Travel & Tours (GL #5247)"
+  description="Essential Umrah preparation checklist, visa documentation, packing guide, Ihram etiquette, and group travel protocol from Iconic Travel & Tours."
+>
+
+  <!-- Hero Header -->
+  <section class="relative py-20 bg-brand-emerald text-white overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img
+        src="/images/pilgrim-prayer.jpg"
+        alt="Pilgrim in prayer"
+        class="w-full h-full object-cover opacity-20 scale-105"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-brand-emerald/90 via-brand-emerald/95 to-brand-forest"></div>
+    </div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+      <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.25em] text-brand-gold">
+        <span>Resource Center</span>
+        <span>•</span>
+        <span>Step-by-Step Guidance</span>
+      </div>
+
+      <h1 class="font-serif text-4xl sm:text-6xl font-bold tracking-tight text-brand-ivory">
+        The Pilgrim's Travel Companion
+      </h1>
+
+      <p class="max-w-2xl mx-auto text-sm sm:text-base text-brand-ivory/80 leading-relaxed font-light">
+        Everything you need to know before stepping aboard: spiritual readiness, mandatory documentation, packing checklists, and sacred etiquette.
+      </p>
+
+      <!-- Quick Nav Anchor Chips -->
+      <div class="flex flex-wrap items-center justify-center gap-2 pt-4">
+        {travelGuide.sections.map((sec) => (
+          <a
+            href={`#${sec.id}`}
+            class="px-3.5 py-1.5 rounded-full text-[11px] font-semibold bg-white/10 hover:bg-white/20 text-brand-ivory border border-brand-gold/30 transition-all"
+          >
+            {sec.title}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Guide Sections Container -->
+  <section class="py-20 bg-brand-ivory">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      
+      {travelGuide.sections.map((sec, idx) => (
+        <article id={sec.id} class="scroll-mt-28 bg-white rounded-3xl p-8 sm:p-10 border border-brand-gold/20 shadow-sm space-y-6">
+          
+          <div class="border-b border-brand-gold/20 pb-4">
+            <span class="text-xs font-mono uppercase tracking-widest text-brand-gold-dark font-semibold">
+              Guide Topic 0{idx + 1}
+            </span>
+            <h2 class="font-serif text-2xl sm:text-3xl font-bold text-brand-emerald mt-1">
+              {sec.title}
+            </h2>
+            <p class="text-xs sm:text-sm text-brand-charcoal-muted mt-1">
+              {sec.subtitle}
+            </p>
+          </div>
+
+          <!-- Items Checklist -->
+          <ul class="space-y-4">
+            {sec.items.map((item) => {
+              const parts = item.split(': ');
+              const hasPrefix = parts.length > 1;
+              return (
+                <li class="flex items-start gap-3.5 text-xs sm:text-sm text-brand-charcoal leading-relaxed">
+                  <span class="w-6 h-6 rounded-full bg-brand-emerald/10 text-brand-emerald flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg class="w-3.5 h-3.5 text-brand-gold-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </span>
+                  <div>
+                    {hasPrefix ? (
+                      <>
+                        <strong class="text-brand-emerald">{parts[0]}:</strong>{' '}
+                        <span class="text-brand-charcoal-muted">{parts.slice(1).join(': ')}</span>
+                      </>
+                    ) : (
+                      <span class="text-brand-charcoal-muted">{item}</span>
+                    )}
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+
+        </article>
+      ))}
+
+      <!-- Interactive FAQ Link Card -->
+      <div class="p-8 rounded-3xl bg-brand-forest text-white border border-brand-gold/30 shadow-luxury flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div class="space-y-2 text-center sm:text-left">
+          <h3 class="font-serif text-2xl font-bold text-white">Have More Questions?</h3>
+          <p class="text-xs text-brand-ivory/80 max-w-md">
+            Browse our searchable FAQ section covering packages, hotel distances, Nusuk Rawdah permits, payments, and airline baggage rules.
+          </p>
+        </div>
+        <a
+          href="/faq"
+          class="px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider bg-brand-gold text-brand-emerald hover:brightness-110 shadow-md transition-all whitespace-nowrap"
+        >
+          View Full FAQ Directory →
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+</Layout>

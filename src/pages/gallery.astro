@@ -1,0 +1,252 @@
+---
+import Layout from '../layouts/Layout.astro';
+import gallery from '../data/gallery.json';
+
+const categories = ['All', 'Makkah', 'Madinah', 'Umrah', 'Ziyarat', 'Hotels', 'Group Travel'];
+---
+
+<Layout
+  title="Visual Gallery | Iconic Travel & Tours (GL #5247)"
+  description="Immerse in the visual splendor of Makkah, Madinah, luxury hotel accommodations, and sacred Ziyarat sites with Iconic Travel & Tours."
+>
+
+  <!-- Hero Header -->
+  <section class="relative py-20 bg-brand-emerald text-white overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img
+        src="/images/makkah-clock-tower.jpg"
+        alt="Makkah at twilight"
+        class="w-full h-full object-cover opacity-20 scale-105"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-brand-emerald/90 via-brand-emerald/95 to-brand-forest"></div>
+    </div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+      <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.25em] text-brand-gold">
+        <span>Curated Photography</span>
+        <span>•</span>
+        <span>Aesthetic Reverence</span>
+      </div>
+
+      <h1 class="font-serif text-4xl sm:text-6xl font-bold tracking-tight text-brand-ivory">
+        The Visual Sanctuary
+      </h1>
+
+      <p class="max-w-2xl mx-auto text-sm sm:text-base text-brand-ivory/80 leading-relaxed font-light">
+        A photographic celebration of the holy places, devotion of the pilgrims, and premium hospitality that define our journeys.
+      </p>
+    </div>
+  </section>
+
+  <!-- Gallery Section with Category Tabs -->
+  <section class="py-16 bg-brand-ivory">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      
+      <!-- Category Filter Pills -->
+      <div class="flex flex-wrap items-center justify-center gap-2.5 pb-4 border-b border-brand-gold/20">
+        {categories.map((cat, idx) => (
+          <button
+            type="button"
+            class={`gallery-filter-btn px-5 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-all ${
+              idx === 0 
+                ? 'bg-brand-emerald text-brand-gold shadow-sm active-tab' 
+                : 'bg-white text-brand-charcoal hover:bg-brand-gold/15 border border-brand-gold/25'
+            }`}
+            data-category={cat}
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
+
+      <!-- Masonry Grid -->
+      <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {gallery.map((item, index) => (
+          <div
+            class="gallery-card relative group rounded-2xl overflow-hidden shadow-luxury border border-brand-gold/20 bg-black/40 h-80 cursor-pointer transition-transform duration-300 hover:-translate-y-1"
+            data-category={item.category}
+            data-index={index}
+            data-image={item.image}
+            data-title={item.title}
+            data-caption={item.caption}
+          >
+            <img
+              src={item.image}
+              alt={item.title}
+              loading="lazy"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
+            
+            <div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity bg-black/60 p-2 rounded-full text-brand-gold border border-brand-gold/30">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
+              </svg>
+            </div>
+
+            <div class="absolute bottom-4 left-4 right-4 text-white">
+              <span class="text-[10px] font-mono uppercase px-2.5 py-0.5 rounded bg-brand-gold/20 text-brand-gold border border-brand-gold/30">
+                {item.category}
+              </span>
+              <h3 class="font-serif text-lg font-bold mt-1 text-brand-ivory">{item.title}</h3>
+              <p class="text-xs text-brand-ivory/70 line-clamp-1 mt-0.5">{item.caption}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Accessible Lightbox Modal -->
+  <div
+    id="gallery-lightbox"
+    class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/95 backdrop-blur-md hidden"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Image View"
+  >
+    <!-- Close Button -->
+    <button
+      type="button"
+      id="lightbox-close"
+      class="absolute top-6 right-6 p-2 rounded-full text-white/70 hover:text-white bg-white/10 hover:bg-white/20 transition-colors z-50"
+      aria-label="Close Lightbox"
+    >
+      <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+    <!-- Prev Button -->
+    <button
+      type="button"
+      id="lightbox-prev"
+      class="absolute left-4 sm:left-8 p-3 rounded-full text-white/70 hover:text-white bg-white/10 hover:bg-white/20 transition-colors z-50"
+      aria-label="Previous Image"
+    >
+      <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+    </button>
+
+    <!-- Next Button -->
+    <button
+      type="button"
+      id="lightbox-next"
+      class="absolute right-4 sm:right-8 p-3 rounded-full text-white/70 hover:text-white bg-white/10 hover:bg-white/20 transition-colors z-50"
+      aria-label="Next Image"
+    >
+      <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+      </svg>
+    </button>
+
+    <!-- Lightbox Main Frame -->
+    <div class="relative max-w-5xl max-h-[85vh] flex flex-col items-center justify-center">
+      <img
+        id="lightbox-img"
+        src=""
+        alt=""
+        class="max-w-full max-h-[72vh] object-contain rounded-xl shadow-2xl border border-brand-gold/30"
+      />
+      <div class="mt-4 text-center text-white space-y-1">
+        <h4 id="lightbox-title" class="font-serif text-xl font-bold text-brand-gold"></h4>
+        <p id="lightbox-caption" class="text-xs text-brand-ivory/80 max-w-lg mx-auto"></p>
+      </div>
+    </div>
+  </div>
+
+</Layout>
+
+<script>
+  // Filter tabs
+  const filterBtns = document.querySelectorAll<HTMLButtonElement>('.gallery-filter-btn');
+  const cards = document.querySelectorAll<HTMLElement>('.gallery-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => {
+        b.classList.remove('bg-brand-emerald', 'text-brand-gold', 'active-tab');
+        b.classList.add('bg-white', 'text-brand-charcoal');
+      });
+      btn.classList.add('bg-brand-emerald', 'text-brand-gold', 'active-tab');
+      btn.classList.remove('bg-white', 'text-brand-charcoal');
+
+      const selectedCat = btn.dataset.category || 'All';
+
+      cards.forEach(card => {
+        const cat = card.dataset.category || '';
+        if (selectedCat === 'All' || cat === selectedCat) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // Lightbox logic
+  const lightbox = document.getElementById('gallery-lightbox');
+  const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement | null;
+  const lightboxTitle = document.getElementById('lightbox-title');
+  const lightboxCaption = document.getElementById('lightbox-caption');
+  const closeBtn = document.getElementById('lightbox-close');
+  const prevBtn = document.getElementById('lightbox-prev');
+  const nextBtn = document.getElementById('lightbox-next');
+
+  let currentList: HTMLElement[] = [];
+  let currentIndex = 0;
+
+  const updateLightbox = (index: number) => {
+    if (!currentList[index] || !lightboxImg || !lightboxTitle || !lightboxCaption) return;
+    currentIndex = index;
+    const card = currentList[index];
+    lightboxImg.src = card.dataset.image || '';
+    lightboxImg.alt = card.dataset.title || '';
+    lightboxTitle.textContent = card.dataset.title || '';
+    lightboxCaption.textContent = card.dataset.caption || '';
+  };
+
+  const openLightbox = (card: HTMLElement) => {
+    currentList = Array.from(document.querySelectorAll<HTMLElement>('.gallery-card')).filter(c => c.style.display !== 'none');
+    currentIndex = currentList.indexOf(card);
+    if (currentIndex === -1) currentIndex = 0;
+    updateLightbox(currentIndex);
+    lightbox?.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeLightbox = () => {
+    lightbox?.classList.add('hidden');
+    document.body.style.overflow = '';
+  };
+
+  cards.forEach(card => {
+    card.addEventListener('click', () => openLightbox(card));
+  });
+
+  closeBtn?.addEventListener('click', closeLightbox);
+  lightbox?.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  prevBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const nextIdx = (currentIndex - 1 + currentList.length) % currentList.length;
+    updateLightbox(nextIdx);
+  });
+
+  nextBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const nextIdx = (currentIndex + 1) % currentList.length;
+    updateLightbox(nextIdx);
+  });
+
+  window.addEventListener('keydown', (e) => {
+    if (lightbox?.classList.contains('hidden')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') prevBtn?.click();
+    if (e.key === 'ArrowRight') nextBtn?.click();
+  });
+</script>

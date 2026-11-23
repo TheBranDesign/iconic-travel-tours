@@ -1,0 +1,250 @@
+[
+  {
+    "slug": "executive-ramadan-14-days",
+    "name": "Executive Ramadan Sanctuary",
+    "category": "Ramadan Special",
+    "travelType": "Group & Individual",
+    "departureMonth": "Ramadan 2026 / 1448 AH",
+    "durationDays": 14,
+    "makkahNights": 7,
+    "madinahNights": 7,
+    "featured": true,
+    "tag": "Most Revered Season",
+    "heroImage": "/images/hero-kaaba-tawaf.jpg",
+    "cardImage": "/images/hero-kaaba-tawaf.jpg",
+    "pricePlaceholder": "PKR [Inquire for Live Ramadan Quote]",
+    "priceNote": "Subject to airline class & hotel room tier at time of confirmation",
+    "isDemo": true,
+    "availability": "Limited Slots Available",
+    "makkahHotel": "Clock Tower Luxury Complex (0m to Haram Courtyard)",
+    "madinahHotel": "Front Row Luxury Hotel, Northern Courtyard (Walking Distance)",
+    "transport": "High-Speed Haramain Train (Business Class) & Private GMC Transfers",
+    "overview": "Immerse your soul in the divine atmosphere of Ramadan in the Holy Sanctuaries of Makkah and Madinah. Designed for discerning pilgrims seeking maximum time in Ibadah with premier hospitality.",
+    "highlights": [
+      "Iftar & Suhoor buffet arrangements included",
+      "Direct Haram courtyard access for all 5 daily prayers & Taraweeh",
+      "Comprehensive Ziyarat with knowledgeable religious guides",
+      "24/7 dedicated Iconic coordinator on-ground"
+    ],
+    "included": [
+      "Saudi Tourist / Umrah Visa processing assistance",
+      "7 Nights 5-Star Makkah accommodation with Haram view options",
+      "7 Nights 5-Star Madinah accommodation in central northern district",
+      "Full daily Suhoor / Breakfast buffet spread",
+      "Haramain High-Speed Train tickets (Makkah – Madinah)",
+      "VIP private arrival and departure airport transfers",
+      "Guided historical Ziyarat in Makkah & Madinah in AC luxury vehicles",
+      "24/7 multilingual ground support coordinator (GL #5247)"
+    ],
+    "excluded": [
+      "International roundtrip airfare (available upon request at net carrier fare)",
+      "Personal laundry, room telephone, and incidental expenses",
+      "Optional additional private excursion trips"
+    ],
+    "itinerary": [
+      { "day": 1, "title": "Arrival in the Blessed Kingdom & Umrah Performance", "description": "Meet and assist at Jeddah / Madinah International Airport. Private luxury transfer to your Makkah hotel. Check-in, brief rest, and guided performance of Umrah." },
+      { "day": 2, "title": "Devotion in the Grand Mosque", "description": "Spend the day in Tawaf, recitation of the Holy Qur'an, and Taraweeh prayers in Masjid al-Haram." },
+      { "day": 4, "title": "Historical Ziyarat of Makkah al-Mukarramah", "description": "Morning excursion to Jabal al-Noor (Cave of Hira), Jabal Thawr, Mina, Muzdalifah, and Jabal al-Rahmah (Arafat)." },
+      { "day": 8, "title": "Haramain High-Speed Train to Madinah", "description": "Bid farewell to Makkah with a final Tawaf al-Wada. Board the Haramain high-speed train to the City of the Prophet (peace be upon him). Check-in and first visit to Rawdah Shareef." },
+      { "day": 10, "title": "Madinah Historical Ziyarat", "description": "Guided visit to Masjid Quba (perform two Rakahs), Mount Uhud & the Martyrs Cemetery, and Masjid al-Qiblatain." },
+      { "day": 14, "title": "Final Salaam & Return Journey", "description": "Final prayers in Masjid an-Nabawi. Transfer to Madinah or Jeddah Airport for departure with blessed memories." }
+    ]
+  },
+  {
+    "slug": "deluxe-family-21-days",
+    "name": "Deluxe Family Spiritual Journey",
+    "category": "Deluxe Family",
+    "travelType": "Family & Small Group",
+    "departureMonth": "October 2026 / Safar 1448 AH",
+    "durationDays": 21,
+    "makkahNights": 11,
+    "madinahNights": 10,
+    "featured": true,
+    "tag": "Comprehensive & Relaxed",
+    "heroImage": "/images/luxury-hotel-suite.jpg",
+    "cardImage": "/images/luxury-hotel-suite.jpg",
+    "pricePlaceholder": "PKR [Custom Family Tier Quote]",
+    "priceNote": "Tailored family suites and quad room options available",
+    "isDemo": true,
+    "availability": "Open for Booking",
+    "makkahHotel": "5-Star Abraj Al Bait Complex / Ajyad District",
+    "madinahHotel": "5-Star Central Markazia District, Madinah",
+    "transport": "Private Luxury GMC / Mercedes Sprinter Van",
+    "overview": "A meticulously curated 21-day family journey designed to give elders and children comfortable, stress-free access to the Holy Harams with spacious accommodations and dedicated guidance.",
+    "highlights": [
+      "Spacious interconnected family suites",
+      "Wheelchair assistance and elder support on demand",
+      "Relaxed itinerary allowing ample rest between prayers",
+      "Complete educational Ziyarat tours with historical context"
+    ],
+    "included": [
+      "Complete Umrah visa processing & health insurance documentation",
+      "11 Nights luxury Makkah hotel within short walk to Haram gates",
+      "10 Nights luxury Madinah hotel directly facing the Prophet's courtyard",
+      "Daily breakfast buffet at the hotel restaurant",
+      "All intercity and airport transportation in private air-conditioned vehicles",
+      "Dedicated Iconic family liaison officer available 24/7",
+      "Comprehensive Ziyarat excursions in both holy cities",
+      "Complimentary Zamzam 5L canister facilitation per pilgrim"
+    ],
+    "excluded": [
+      "International flights (can be bundled with PIA, Saudia, or Emirates)",
+      "Lunch and dinner meals outside designated breakfast plan",
+      "Personal shopping and discretionary gratuities"
+    ],
+    "itinerary": [
+      { "day": "1-3", "title": "Welcome to Makkah & Sacred Rites", "description": "Seamless airport welcome and hotel check-in. Orientation session followed by peaceful first Umrah performance." },
+      { "day": "4-7", "title": "Spiritual Contemplation & Daily Prayers", "description": "Unrushed schedule centered around the five daily prayers at the Kaaba, Quran study, and Tahajjud." },
+      { "day": "8", "title": "Makkah Sacred Sites Tour", "description": "Comprehensive family tour to Mina, Arafat, Muzdalifah, and Cave of Thawr with air-conditioned comfort." },
+      { "day": "12", "title": "Journey to Al-Madinah al-Munawwarah", "description": "Scenic transfer to Madinah. Evening arrival and first blessed Salaam at the Prophet's Mosque." },
+      { "day": "13-19", "title": "Days of Peace in Madinah", "description": "Daily visits to the Rawdah Shareef, visits to Masjid Quba, Mount Uhud, and local dates market." },
+      { "day": "21", "title": "Homeward Flight with Gratitude", "description": "Comfortable airport transfer with all luggage assisted by our team." }
+    ]
+  },
+  {
+    "slug": "classic-group-umrah-15-days",
+    "name": "Classic Group Umrah Tour",
+    "category": "Group Umrah",
+    "travelType": "Group Travel",
+    "departureMonth": "November 2026 / Rabi al-Awwal 1448 AH",
+    "durationDays": 15,
+    "makkahNights": 8,
+    "madinahNights": 7,
+    "featured": true,
+    "tag": "Signature Group Package",
+    "heroImage": "/images/madinah-courtyard.jpg",
+    "cardImage": "/images/madinah-courtyard.jpg",
+    "pricePlaceholder": "PKR [Standard Group Rate Placeholder]",
+    "priceNote": "Available in Quad, Triple, and Double sharing room plans",
+    "isDemo": true,
+    "availability": "Registration Active",
+    "makkahHotel": "Premium 4-Star / 5-Star Ibrahim Khalil Road (Walking Distance)",
+    "madinahHotel": "Premium Central Markazia Hotel (Near Women & Men Gates)",
+    "transport": "Latest Model Air-Conditioned Luxury Coach Fleet",
+    "overview": "Our signature group program inspired by our proven corporate and community delegations. Enjoy the companionship of fellow pilgrims under the steady guidance of experienced Iconic group leaders.",
+    "highlights": [
+      "Accompanied by veteran Pakistani group leader from departure to arrival",
+      "Daily pre-departure briefings and prayer schedules",
+      "Hearty group breakfast arrangements (Ground Floor Dining)",
+      "Coordinated Ziyarat in chartered luxury coaches"
+    ],
+    "included": [
+      "Group Umrah visa endorsement & mandatory travel protection",
+      "8 Nights accommodation in Makkah with seamless walking access",
+      "7 Nights accommodation in Madinah close to the northern entrance",
+      "Daily breakfast schedule (06:30 AM – 10:00 AM)",
+      "All group transfers in sanitized, modern air-conditioned coaches",
+      "Full Ziyarat program in both holy cities",
+      "Dedicated group coordinator available 24/7 (GL #5247)",
+      "Iconic pilgrim essentials kit (duffle bag, ID card, travel pouch)"
+    ],
+    "excluded": [
+      "International return air ticket (group flight options available)",
+      "Individual transport for personal excursions outside group itinerary",
+      "Excess baggage charges beyond airline allocation"
+    ],
+    "itinerary": [
+      { "day": "1-2", "title": "Karachi to Jeddah & Group Umrah Entry", "description": "Gather at Karachi airport with your group coordinator. Group flight to Jeddah, immediate coach transfer to Makkah, and collective Umrah." },
+      { "day": "3-6", "title": "Collective Ibadah & Makkah Ziyarat", "description": "Organized visits to holy landmarks with religious commentary. Ample free time for individual worship." },
+      { "day": "9", "title": "Group Transfer to Madinah", "description": "Comfortable coach journey through the scenic desert highway. Arrival and evening gathering." },
+      { "day": "10-14", "title": "Madinah Sanctuaries & Quba Excursion", "description": "Scheduled visits to Rawdah Shareef, Quba Mosque, Mount Uhud, and Dates Orchard." },
+      { "day": "15", "title": "Return Flight to Karachi", "description": "Farewell gathering and return flight home." }
+    ]
+  },
+  {
+    "slug": "economy-blessed-journey-10-days",
+    "name": "Economy Essential Umrah",
+    "category": "Economy Group",
+    "travelType": "Budget-Conscious Group",
+    "departureMonth": "December 2026 / Jumada al-Ula 1448 AH",
+    "durationDays": 10,
+    "makkahNights": 5,
+    "madinahNights": 5,
+    "featured": false,
+    "tag": "Value & Accessibility",
+    "heroImage": "/images/pilgrim-prayer.jpg",
+    "cardImage": "/images/pilgrim-prayer.jpg",
+    "pricePlaceholder": "PKR [Economy Tier Placeholder]",
+    "priceNote": "Designed to provide complete essentials without unnecessary overhead",
+    "isDemo": true,
+    "availability": "Limited Capacity",
+    "makkahHotel": "Standard 3/4-Star Hotel with 24-hr Haram Shuttle Service",
+    "madinahHotel": "Standard Markazia Hotel (Approx 350m to Haram Courtyard)",
+    "transport": "Air-Conditioned Intercity Coach",
+    "overview": "For pilgrims seeking an accessible, honest, and smooth spiritual trip that covers all foundational travel, visa, accommodation, and guidance requirements without compromise on safety or dignity.",
+    "highlights": [
+      "Dependable 24-hour hotel-to-Haram shuttle service in Makkah",
+      "Direct group leader support throughout the tour",
+      "Essential Ziyarat included at both destinations",
+      "Clean, verified hospitality partners vetted by GL #5247"
+    ],
+    "included": [
+      "Saudi Umrah visa issuance & processing",
+      "5 Nights Makkah hotel with continuous Haram shuttle",
+      "5 Nights Madinah hotel within walking distance",
+      "Coordinated group airport transfers",
+      "Guided Ziyarat in Makkah and Madinah",
+      "24/7 hotline with Iconic Karachi headquarters"
+    ],
+    "excluded": [
+      "Airfare (can be booked independently or through our ticketing desk)",
+      "Daily meals other than specified breakfast",
+      "Personal expenses"
+    ],
+    "itinerary": [
+      { "day": 1, "title": "Arrival & Initial Rites", "description": "Airport pickup and coach transit to hotel. Performance of Umrah with group guide." },
+      { "day": "2-4", "title": "Devotional Days in Makkah", "description": "Focus on daily congregational prayers and spiritual renewal." },
+      { "day": 6, "title": "Transfer to Madinah", "description": "Intercity transfer to the tranquil city of the Prophet." },
+      { "day": "7-9", "title": "Madinah Prayers & Ziyarat", "description": "Visits to Quba and Uhud; prayer in the Prophet's courtyard." },
+      { "day": 10, "title": "Departure", "description": "Airport departure transfer." }
+    ]
+  },
+  {
+    "slug": "vip-custom-umrah-tailored",
+    "name": "Bespoke Royal VIP Umrah",
+    "category": "Tailored Private",
+    "travelType": "Private VIP Delegation",
+    "departureMonth": "Custom Dates on Request",
+    "durationDays": 12,
+    "makkahNights": 6,
+    "madinahNights": 6,
+    "featured": true,
+    "tag": "Uncompromising Luxury",
+    "heroImage": "/images/makkah-panoramic.jpg",
+    "cardImage": "/images/makkah-panoramic.jpg",
+    "pricePlaceholder": "PKR [Custom Concierge Quotation]",
+    "priceNote": "Tailored completely to your personal dates, hotel brand, and vehicle specifications",
+    "isDemo": true,
+    "availability": "On Demand",
+    "makkahHotel": "Presidential / Diplomatic Suite Overlooking the Holy Kaaba",
+    "madinahHotel": "Royal Suite directly facing the Prophet's Green Dome",
+    "transport": "Chauffeured GMC Yukon Denali / Mercedes S-Class",
+    "overview": "The pinnacle of private spiritual travel. Designed for corporate executives, state delegations, and distinguished families who require seamless privacy, dedicated private scholars, and royal-grade hospitality.",
+    "highlights": [
+      "Direct Kaaba-facing panorama from private suite living room",
+      "Private scholar accompaniment for rituals and private lectures",
+      "Exclusive tarmac meet-and-assist service where permissible",
+      "Chauffeured private transport at your beck and call 24/7"
+    ],
+    "included": [
+      "Priority VIP visa processing and personal concierge desk",
+      "6 Nights ultra-luxury Kaaba View suite in Makkah",
+      "6 Nights ultra-luxury Haram View suite in Madinah",
+      "In-suite bespoke gourmet dining and fine Arabian hospitality",
+      "Dedicated 24/7 private GMC Yukon Denali with chauffeur",
+      "Private tailored Ziyarat program at your own schedule",
+      "Luggage porterage and direct check-in management"
+    ],
+    "excluded": [
+      "Private jet charter or first-class international airfare (quoted separately)",
+      "Custom concierge purchases"
+    ],
+    "itinerary": [
+      { "day": 1, "title": "VIP Arrival & Tarmac Concierge", "description": "Fast-track arrival, baggage collection, and private limousine transfer to Makkah." },
+      { "day": "2-6", "title": "Private Contemplation in Makkah", "description": "Unrestricted private access, personalized scheduling, and private guided visits." },
+      { "day": 7, "title": "First-Class Train / Private Chauffeur to Madinah", "description": "Seamless transit in utter comfort." },
+      { "day": "8-11", "title": "Peaceful Devotion in Al-Madinah", "description": "Dedicated assistance for Rawdah visits and private historical landmarks." },
+      { "day": 12, "title": "Royal Departure", "description": "Private transfer to airport lounge and departure." }
+    ]
+  }
+]

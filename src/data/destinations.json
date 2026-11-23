@@ -1,0 +1,117 @@
+[
+  {
+    "slug": "makkah",
+    "name": "Makkah al-Mukarramah",
+    "arabicTitle": "مَكَّةُ المُكَرَّمَة",
+    "tagline": "The Spiritual Heart of the Islamic World",
+    "heroImage": "/images/makkah-panoramic.jpg",
+    "cardImage": "/images/hero-kaaba-tawaf.jpg",
+    "intro": "Makkah al-Mukarramah is the holiest city on Earth, the birthplace of the Prophet Muhammad (peace be upon him), and home to the sacred Kaaba toward which over 1.8 billion believers turn five times each day. Walking its streets evokes centuries of deep faith, devotion, and timeless unity.",
+    "atmosphere": "Sacred, awe-inspiring, and profoundly emotional. Day and night merge into continuous prayer, heartfelt supplication, and the rhythmic flow of pilgrims completing Tawaf around the House of Allah.",
+    "landmarks": [
+      {
+        "name": "Masjid al-Haram & The Holy Kaaba",
+        "description": "The greatest sanctuary on earth, encompassing the Kaaba, the Black Stone (Hajar al-Aswad), Maqam Ibrahim, the Well of Zamzam, and the hills of Safa and Marwah.",
+        "image": "/images/hero-kaaba-tawaf.jpg"
+      },
+      {
+        "name": "Abraj Al Bait & The Clock Tower",
+        "description": "A magnificent modern landmark standing directly before the Grand Mosque, housing luxury residences, cultural museums, and world-class hospitality.",
+        "image": "/images/makkah-clock-tower.jpg"
+      },
+      {
+        "name": "Jabal al-Noor & Cave of Hira",
+        "description": "The historic mountain where the Prophet Muhammad (peace be upon him) received the very first revelation of the Holy Qur'an through Angel Jibreel.",
+        "image": "/images/jabal-al-noor.jpg"
+      },
+      {
+        "name": "The Holy Plains of Mina, Arafat & Muzdalifah",
+        "description": "The sacred valley and plains of Hajj where millions gather during the days of Tashreeq and the supreme day of Wuqoof at Jabal al-Rahmah.",
+        "image": "/images/arafat-rahmah.jpg"
+      }
+    ],
+    "highlights": [
+      "Direct 0-meter walking proximity to the Grand Mosque courtyard from our partner hotels",
+      "Private and small-group guided historical Ziyarat with knowledgeable scholars",
+      "Executive dining options featuring breakfast buffets and traditional Arabian hospitality",
+      "Dedicated Iconic Karachi and Saudi ground coordinators available 24/7"
+    ],
+    "guidance": "In Makkah, prioritize quiet contemplation and patience. Wear comfortable footwear for walking, remain properly hydrated with Zamzam water, and time your Tawaf during late evening or early dawn hours for a serene, unhurried experience.",
+    "relatedPackages": ["executive-ramadan-14-days", "deluxe-family-21-days", "classic-group-umrah-15-days", "vip-custom-umrah-tailored"]
+  },
+  {
+    "slug": "madinah",
+    "name": "Al-Madinah al-Munawwarah",
+    "arabicTitle": "المَدِينَة المُنَوَّرَة",
+    "tagline": "The City of Light & Prophet's Serenity",
+    "heroImage": "/images/madinah-courtyard.jpg",
+    "cardImage": "/images/madinah-prophet-mosque.jpg",
+    "intro": "Al-Madinah al-Munawwarah, the illuminated sanctuary, greets every traveler with an overwhelming sense of peace, gentleness, and serenity. It is the blessed home where the Prophet Muhammad (peace be upon him) established the first Islamic society and where he rests in eternal tranquility.",
+    "atmosphere": "Serene, tranquil, and tender. The sprawling courtyard with its iconic giant mechanical umbrellas offers cool shade and quiet contemplation, where hearts feel an unmatched sense of comfort and relief.",
+    "landmarks": [
+      {
+        "name": "Masjid an-Nabawi (The Prophet's Mosque)",
+        "description": "The spiritual centerpiece featuring the famous Green Dome, the Rawdah Shareef (a garden of Paradise), the Minbar, and Bab as-Salam.",
+        "image": "/images/madinah-courtyard.jpg"
+      },
+      {
+        "name": "Masjid Quba",
+        "description": "The first mosque built in the history of Islam. Performing two Rakahs of prayer here carries the spiritual reward of a complete Umrah.",
+        "image": "/images/masjid-quba.jpg"
+      },
+      {
+        "name": "Mount Uhud & Martyrs' Cemetery",
+        "description": "The historic mountain loved by the Prophet (peace be upon him) and the site of the Battle of Uhud, where the beloved martyrs including Sayyiduna Hamzah (RA) are interred.",
+        "image": "/images/mount-uhud.jpg"
+      },
+      {
+        "name": "Masjid al-Qiblatain",
+        "description": "The historic mosque where the divine revelation commanded the change of the Qiblah direction from Jerusalem to the Holy Kaaba in Makkah.",
+        "image": "/images/masjid-qiblatain.jpg"
+      }
+    ],
+    "highlights": [
+      "5-Star hotels directly adjoining the Northern and Western courtyards",
+      "Seamless booking assistance for official Nusuk Rawdah Shareef appointments",
+      "Expert guided tours of historical battlegrounds and early mosques",
+      "Excursions to the renowned Madinah Dates Market for Ajwa and Safawi varieties"
+    ],
+    "guidance": "Approach the Prophet's Mosque with reverence and soft voices. When presenting your Salaam at the Rawdah Shareef, do so with sincere humility and send blessings upon the Messenger of Allah, his noble companions Abu Bakr and Umar (may Allah be pleased with them).",
+    "relatedPackages": ["executive-ramadan-14-days", "deluxe-family-21-days", "classic-group-umrah-15-days", "vip-custom-umrah-tailored"]
+  },
+  {
+    "slug": "jeddah",
+    "name": "Jeddah the Historic Gateway",
+    "arabicTitle": "جُدَّة عَرُوسُ البَحْرِ الأَحْمَر",
+    "tagline": "The Bride of the Red Sea & Historic Port of Pilgrims",
+    "heroImage": "/images/jeddah-waterfront.jpg",
+    "cardImage": "/images/jeddah-waterfront.jpg",
+    "intro": "For over fourteen centuries, Jeddah has served as the historic maritime and air gateway for pilgrims traveling from every corner of the earth to the Holy Cities. Today, it combines rich UNESCO World Heritage history in Al-Balad with contemporary Red Sea elegance.",
+    "atmosphere": "Coastal, cosmopolitan, and welcoming. A vibrant seaside metropolis where cool Red Sea breezes, historic coral stone houses, and modern waterfront promenades welcome international visitors.",
+    "landmarks": [
+      {
+        "name": "Al-Balad (Historic UNESCO Quarter)",
+        "description": "The ancient heart of Jeddah known for its 7th-century coral architecture, wooden Roshan balconies, and bustling spice souqs.",
+        "image": "/images/islamic-patterns.jpg"
+      },
+      {
+        "name": "Jeddah Corniche & Red Sea Waterfront",
+        "description": "A stunning seaside promenade with sculptures, open-air cafes, family recreation parks, and the iconic King Fahd Fountain.",
+        "image": "/images/jeddah-waterfront.jpg"
+      },
+      {
+        "name": "Haramain High-Speed Rail Station",
+        "description": "The state-of-the-art terminal connecting King Abdulaziz International Airport to Makkah in 54 minutes and Madinah in under 2 hours.",
+        "image": "/images/vip-transport.jpg"
+      }
+    ],
+    "highlights": [
+      "VIP airport meet-and-greet right at King Abdulaziz International Terminal",
+      "Private luxury transfers directly to Makkah via the dedicated highway",
+      "Optional coastal stopover packages featuring 5-star beachfront resorts",
+      "Traditional seafood dining and cultural heritage tours"
+    ],
+    "guidance": "Jeddah is your seamless gateway. Ensure your Ihram is worn prior to crossing the Meeqat line if flying directly into Jeddah for immediate Umrah performance.",
+    "relatedPackages": ["deluxe-family-21-days", "vip-custom-umrah-tailored"]
+  }
+]

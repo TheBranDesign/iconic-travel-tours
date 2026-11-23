@@ -1,0 +1,123 @@
+---
+interface Props {
+  pkg: {
+    slug: string;
+    name: string;
+    category: string;
+    tag?: string;
+    departureMonth: string;
+    durationDays: number;
+    makkahNights: number;
+    madinahNights: number;
+    heroImage: string;
+    cardImage?: string;
+    makkahHotel: string;
+    madinahHotel: string;
+    transport: string;
+    pricePlaceholder: string;
+    priceNote?: string;
+    availability: string;
+    overview: string;
+  };
+}
+
+const { pkg } = Astro.props;
+const displayImage = pkg.cardImage || pkg.heroImage;
+---
+
+<article class="bg-white rounded-2xl overflow-hidden border border-brand-gold/20 shadow-luxury hover:shadow-luxury-lg transition-all duration-300 flex flex-col group transform hover:-translate-y-1">
+  <!-- Image Banner -->
+  <div class="relative h-64 overflow-hidden bg-brand-forest">
+    <img
+      src={displayImage}
+      alt={pkg.name}
+      loading="lazy"
+      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+
+    <!-- Category & Tag Badges -->
+    <div class="absolute top-4 left-4 flex flex-wrap gap-2">
+      <span class="px-3 py-1 rounded-full text-[11px] font-semibold tracking-wider uppercase bg-brand-emerald text-brand-gold border border-brand-gold/30 shadow-sm backdrop-blur-sm">
+        {pkg.category}
+      </span>
+      {pkg.tag && (
+        <span class="px-3 py-1 rounded-full text-[11px] font-semibold tracking-wider uppercase bg-brand-red text-white shadow-sm">
+          {pkg.tag}
+        </span>
+      )}
+    </div>
+
+    <!-- Duration Pill -->
+    <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white text-xs font-medium">
+      <span class="flex items-center gap-1.5 bg-black/60 backdrop-blur-md px-3 py-1 rounded-lg border border-white/20">
+        <svg class="w-3.5 h-3.5 text-brand-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        {pkg.durationDays} Days Total
+      </span>
+      <span class="bg-brand-gold/90 text-brand-emerald px-2.5 py-1 rounded-lg font-bold text-[11px]">
+        {pkg.availability}
+      </span>
+    </div>
+  </div>
+
+  <!-- Content Body -->
+  <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+    <div>
+      <h3 class="font-serif text-2xl font-bold text-brand-emerald group-hover:text-brand-gold-dark transition-colors">
+        <a href={`/umrah-packages/${pkg.slug}`}>{pkg.name}</a>
+      </h3>
+      <p class="text-xs font-mono text-brand-gold-dark uppercase tracking-wider mt-1">
+        Departure: {pkg.departureMonth}
+      </p>
+
+      <p class="text-xs text-brand-charcoal-muted line-clamp-2 mt-3 leading-relaxed">
+        {pkg.overview}
+      </p>
+    </div>
+
+    <!-- Key Package Specifications -->
+    <div class="border-t border-b border-brand-ivory-dark py-3.5 space-y-2 text-xs text-brand-charcoal">
+      <div class="flex items-start gap-2">
+        <span class="font-semibold text-brand-emerald w-20 flex-shrink-0">Makkah:</span>
+        <span class="text-brand-charcoal-muted truncate">{pkg.makkahNights} Nights • {pkg.makkahHotel}</span>
+      </div>
+      <div class="flex items-start gap-2">
+        <span class="font-semibold text-brand-emerald w-20 flex-shrink-0">Madinah:</span>
+        <span class="text-brand-charcoal-muted truncate">{pkg.madinahNights} Nights • {pkg.madinahHotel}</span>
+      </div>
+      <div class="flex items-start gap-2">
+        <span class="font-semibold text-brand-emerald w-20 flex-shrink-0">Transport:</span>
+        <span class="text-brand-charcoal-muted truncate">{pkg.transport}</span>
+      </div>
+    </div>
+
+    <!-- Pricing Demonstration Indicator -->
+    <div class="bg-brand-ivory rounded-xl p-3 border border-brand-gold/15 flex items-center justify-between">
+      <div>
+        <span class="block text-[10px] uppercase font-mono tracking-wider text-brand-charcoal-muted">Estimated Rate</span>
+        <span class="font-serif text-base font-bold text-brand-emerald">{pkg.pricePlaceholder}</span>
+      </div>
+      <span class="text-[10px] text-brand-gold-dark bg-white px-2 py-0.5 rounded border border-brand-gold/30">
+        GL #5247 Verified
+      </span>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="grid grid-cols-2 gap-2 pt-1">
+      <a
+        href={`/umrah-packages/${pkg.slug}`}
+        class="inline-flex items-center justify-center py-2.5 px-3 rounded-xl text-xs font-bold tracking-wider uppercase text-brand-emerald bg-brand-ivory hover:bg-brand-gold/20 border border-brand-gold/30 transition-all text-center"
+      >
+        View Package
+      </a>
+      <a
+        href={`/request-a-quote?package=${pkg.slug}`}
+        class="inline-flex items-center justify-center py-2.5 px-3 rounded-xl text-xs font-bold tracking-wider uppercase bg-brand-emerald text-brand-gold hover:bg-brand-forest transition-all text-center shadow-sm"
+      >
+        Request Quote
+      </a>
+    </div>
+  </div>
+</article>
