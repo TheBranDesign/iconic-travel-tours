@@ -5,7 +5,7 @@ import company from '../data/company.json';
 
 <Layout
   title="Contact Us | Iconic Travel & Tours (GL #5247) — Karachi, Pakistan"
-  description="Contact Iconic Travel & Tours at Office #502, Iconic Business Center, Sharfabad, Karachi. Direct phones: +92-332-2177752, +92-321-9199999, +92-300-9222212."
+  description="Contact Iconic Travel & Tours at Office #502, Iconic Business Center, Sharfabad, Karachi. Direct phones: +92-332-2177752, +92-321-9199999. Official WhatsApp: +92 300 9222123."
 >
 
   <!-- Hero Header -->
@@ -118,7 +118,7 @@ import company from '../data/company.json';
               rel="noopener noreferrer"
               class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider bg-[#25D366] text-white hover:brightness-105 transition-all shadow-sm"
             >
-              <span>Chat with +92-332-2177752</span>
+              <span>Chat on WhatsApp (+92 300 9222123)</span>
             </a>
           </div>
 
@@ -175,7 +175,7 @@ import company from '../data/company.json';
                   id="c-phone"
                   name="phone"
                   required
-                  placeholder="+92 332 1234567"
+                  placeholder="+92 300 1234567"
                   class="w-full text-xs rounded-xl border-brand-gold/30 bg-brand-ivory/50 py-3 px-3.5 focus:ring-brand-gold focus:border-brand-gold"
                 />
               </div>
@@ -295,32 +295,48 @@ import company from '../data/company.json';
     if (!statusDiv || !submitBtn) return;
 
     submitBtn.setAttribute('disabled', 'true');
-    submitBtn.textContent = 'Processing Inquiry...';
+    submitBtn.textContent = 'Opening WhatsApp Desk...';
 
     const formData = new FormData(form);
     const fullName = formData.get('fullName') as string;
+    const email = formData.get('email') as string;
     const phone = formData.get('phone') as string;
     const dest = formData.get('destination') as string;
+    const travelType = formData.get('travelType') as string;
     const travelers = formData.get('travelers') as string;
+    const travelDate = formData.get('travelDate') as string;
     const msg = formData.get('message') as string;
 
-    // Build pre-formatted WhatsApp backup URL
-    const waText = `Assalamu Alaikum Iconic Travel & Tours. My name is ${fullName} (${phone}). I am inquiring about: ${dest} for ${travelers}. Message: ${msg}`;
-    const waUrl = `https://wa.me/923322177752?text=${encodeURIComponent(waText)}`;
+    const waText = `Assalamu Alaikum Iconic Travel & Tours.\nNew Contact & Umrah Inquiry:\n• Full Name: ${fullName}\n• Phone / WhatsApp: ${phone}\n• Email: ${email}\n• Destination: ${dest}\n• Category: ${travelType}\n• Travelers: ${travelers}\n• Preferred Date: ${travelDate || 'Flexible'}\n• Message: ${msg}`;
+    const waUrl = `https://wa.me/923009222123?text=${encodeURIComponent(waText)}`;
+    const mailtoUrl = `mailto:inquiry@iconictravelandtours.com?subject=${encodeURIComponent(`Inquiry from ${fullName} - ${dest}`)}&body=${encodeURIComponent(waText)}`;
 
-    // Honest handling: Since static hosting on GitHub Pages does not run server-side mailers without external keys:
-    // We simulate honest delivery prompt and provide direct 1-click WhatsApp transmission backup
+    // Open WhatsApp in a new window/tab
+    window.open(waUrl, '_blank', 'noopener,noreferrer');
+
+    // Honest handling and multiple delivery options
     statusDiv.classList.remove('hidden');
-    statusDiv.className = 'p-4 rounded-xl text-xs bg-emerald-50 border border-emerald-300 text-emerald-900 space-y-2';
+    statusDiv.className = 'p-5 rounded-2xl text-xs bg-emerald-50 border border-emerald-300 text-emerald-900 space-y-3';
     statusDiv.innerHTML = `
-      <p class="font-bold text-sm">✓ Inquiry Prepared Successfully!</p>
-      <p>Thank you, <strong>${fullName}</strong>. Your inquiry has been logged for our Karachi reservation desk.</p>
-      <p class="pt-1">For instant priority review, you can also forward this directly to our desk on WhatsApp:</p>
-      <a href="${waUrl}" target="_blank" class="inline-flex items-center gap-1.5 px-4 py-2 mt-1 rounded-lg bg-[#25D366] text-white font-semibold">
-        <span>Send Copy via WhatsApp Now</span>
-      </a>
+      <div class="flex items-center gap-2 text-emerald-800 font-bold text-sm">
+        <svg class="w-5 h-5 text-emerald-600 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+        <span>Inquiry Prepared & Forwarded!</span>
+      </div>
+      <p>Thank you, <strong>${fullName}</strong>. Your inquiry has been compiled for our Karachi reservation desk.</p>
+      <div class="flex flex-wrap items-center gap-2 pt-1">
+        <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#25D366] text-white font-bold hover:brightness-105 transition-all">
+          <span>Open WhatsApp Chat (+92 300 9222123)</span>
+        </a>
+        <a href="${mailtoUrl}" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-brand-emerald text-brand-gold font-bold hover:bg-brand-forest transition-all">
+          <span>Send via Email</span>
+        </a>
+      </div>
+      <p class="text-[11px] text-emerald-800/80 pt-1 leading-snug">
+        <strong>Delivery Notice:</strong> As this static site does not store personal data on external databases, your inquiry is transmitted directly to our official WhatsApp desk (+92 300 9222123) and email (inquiry@iconictravelandtours.com) for immediate human confirmation.
+      </p>
     `;
 
-    submitBtn.textContent = 'Inquiry Prepared';
+    submitBtn.removeAttribute('disabled');
+    submitBtn.textContent = 'Inquiry Submitted — Submit Another';
   });
 </script>

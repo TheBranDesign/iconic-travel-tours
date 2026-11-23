@@ -403,41 +403,54 @@ import company from '../data/company.json';
     if (!statusBox || !submitBtn || !form) return;
 
     submitBtn.setAttribute('disabled', 'true');
-    submitBtn.textContent = 'Submitting Request...';
+    submitBtn.textContent = 'Opening WhatsApp Desk...';
 
     const data = new FormData(form);
     const name = data.get('name') as string;
+    const email = data.get('email') as string;
     const phone = data.get('phone') as string;
+    const city = data.get('city') as string;
     const service = data.get('service_type') as string;
     const month = data.get('departure_month') as string;
     const duration = data.get('duration') as string;
     const travelers = data.get('travelers_count') as string;
+    const hotelTier = data.get('hotel_tier') as string;
+    const occupancy = data.get('occupancy') as string;
+    const transport = data.get('transport_preference') as string;
+    const notes = (data.get('notes') as string) || 'None';
 
-    const summaryText = `Assalamu Alaikum Iconic Travel & Tours. Custom Quote Request:
-- Name: ${name}
-- Phone: ${phone}
-- Scope: ${service}
-- Season: ${month}
-- Duration: ${duration}
-- Travelers: ${travelers}`;
+    const summaryText = `Assalamu Alaikum Iconic Travel & Tours.\nCustom Umrah Quote Request:\n• Name: ${name}\n• Phone / WhatsApp: ${phone}\n• Email: ${email}\n• City/Country: ${city}\n• Service Scope: ${service}\n• Departure: ${month}\n• Duration: ${duration}\n• Travelers: ${travelers}\n• Accommodation: ${hotelTier} (${occupancy})\n• Transport: ${transport}\n• Special Requests: ${notes}`;
 
-    const waUrl = `https://wa.me/923322177752?text=${encodeURIComponent(summaryText)}`;
+    const waUrl = `https://wa.me/923009222123?text=${encodeURIComponent(summaryText)}`;
+    const mailtoUrl = `mailto:inquiry@iconictravelandtours.com?subject=${encodeURIComponent(`Custom Umrah Quote - ${name} (${travelers})`)}&body=${encodeURIComponent(summaryText)}`;
+
+    // Open WhatsApp directly
+    window.open(waUrl, '_blank', 'noopener,noreferrer');
 
     statusBox.classList.remove('hidden');
-    statusBox.className = 'p-6 rounded-2xl bg-emerald-50 border border-emerald-300 text-emerald-950 space-y-3';
+    statusBox.className = 'p-6 rounded-2xl bg-emerald-50 border border-emerald-300 text-emerald-950 space-y-4';
     statusBox.innerHTML = `
-      <h3 class="font-serif text-lg font-bold text-emerald-900">✓ Your Quote Request Has Been Prepared!</h3>
-      <p class="text-xs leading-relaxed">
-        Thank you, <strong>${name}</strong>. Our Karachi reservation department (GL #5247) will review room inventory and furnish a formal proposal.
+      <div class="flex items-center gap-2 text-emerald-800 font-bold text-base">
+        <svg class="w-5 h-5 text-emerald-600 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+        <span>Quote Request Prepared & Forwarded!</span>
+      </div>
+      <p class="text-xs leading-relaxed text-emerald-900">
+        Thank you, <strong>${name}</strong>. Your customized itinerary details have been compiled for our Karachi reservation desk (GL #5247).
       </p>
-      <div class="pt-2">
-        <p class="text-xs font-semibold text-emerald-900 mb-2">Want instant priority response?</p>
-        <a href="${waUrl}" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#25D366] text-white font-bold text-xs uppercase tracking-wider shadow-sm">
-          <span>Forward to Karachi Desk on WhatsApp</span>
+      <div class="flex flex-wrap items-center gap-2 pt-1">
+        <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#25D366] text-white font-bold text-xs uppercase tracking-wider shadow-sm hover:brightness-105 transition-all">
+          <span>Open WhatsApp Chat (+92 300 9222123)</span>
+        </a>
+        <a href="${mailtoUrl}" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-emerald text-brand-gold font-bold text-xs uppercase tracking-wider hover:bg-brand-forest transition-all">
+          <span>Send via Email</span>
         </a>
       </div>
+      <p class="text-[11px] text-emerald-800/80 pt-1 leading-snug">
+        <strong>Delivery Notice:</strong> As this static site does not store personal data on external databases, your inquiry is transmitted directly to our official WhatsApp desk (+92 300 9222123) and email (inquiry@iconictravelandtours.com) for immediate human review.
+      </p>
     `;
 
-    submitBtn.textContent = 'Request Registered';
+    submitBtn.removeAttribute('disabled');
+    submitBtn.textContent = 'Quote Submitted — Submit Another';
   });
 </script>

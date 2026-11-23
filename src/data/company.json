@@ -13,11 +13,12 @@
     "full": "Office #502, Iconic Business Center, Sharfabad, Karachi, Pakistan."
   },
   "contacts": [
-    { "label": "Director / Primary Line", "number": "+92-332-2177752", "clean": "923322177752", "isWhatsApp": true },
-    { "label": "Group Coordinator", "number": "+92-321-9199999", "clean": "923219199999", "isWhatsApp": true },
-    { "label": "Customer Support Desk", "number": "+92-300-9222212", "clean": "923009222212", "isWhatsApp": true }
+    { "label": "Director / Primary Line", "number": "+92-332-2177752", "clean": "923322177752", "isWhatsApp": false },
+    { "label": "Group Coordinator", "number": "+92-321-9199999", "clean": "923219199999", "isWhatsApp": false },
+    { "label": "Official WhatsApp & Support Desk", "number": "+92-300-9222123", "clean": "923009222123", "isWhatsApp": true }
   ],
-  "primaryWhatsApp": "923322177752",
+  "primaryWhatsApp": "923009222123",
+  "whatsappDisplay": "+92 300 9222123",
   "email": "inquiry@iconictravelandtours.com",
   "website": "https://thebrandesign.github.io/iconic-travel-tours",
   "domain": "thebrandesign.github.io/iconic-travel-tours",
@@ -25,7 +26,7 @@
   "socials": {
     "facebook": "https://facebook.com/iconictravelandtours",
     "instagram": "https://instagram.com/iconictravelandtours",
-    "whatsapp": "https://wa.me/923322177752"
+    "whatsapp": "https://wa.me/923009222123"
   },
   "affiliations": [
     { "name": "Department of Tourist Services", "code": "GL #5247", "verified": true },
