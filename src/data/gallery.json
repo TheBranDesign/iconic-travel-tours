@@ -1,135 +1,135 @@
-[
+﻿[
   {
     "id": 1,
     "title": "Holy Kaaba Night Tawaf",
     "category": "Makkah",
-    "image": "/images/hero-kaaba-tawaf.jpg",
+    "image": "/iconic-travel-tours/images/hero-kaaba-tawaf.jpg",
     "caption": "Pilgrims performing peaceful night Tawaf around the blessed House of Allah."
   },
   {
     "id": 2,
     "title": "Grand Mosque Courtyard & Minarets",
     "category": "Makkah",
-    "image": "/images/makkah-panoramic.jpg",
+    "image": "/iconic-travel-tours/images/makkah-panoramic.jpg",
     "caption": "A breathtaking panoramic perspective over Masjid al-Haram."
   },
   {
     "id": 3,
     "title": "Abraj Al Bait & Clock Tower",
     "category": "Makkah",
-    "image": "/images/makkah-clock-tower.jpg",
+    "image": "/iconic-travel-tours/images/makkah-clock-tower.jpg",
     "caption": "The modern architectural beacon standing opposite the sacred sanctuary."
   },
   {
     "id": 4,
     "title": "Masjid an-Nabawi Umbrellas",
     "category": "Madinah",
-    "image": "/images/madinah-courtyard.jpg",
+    "image": "/iconic-travel-tours/images/madinah-courtyard.jpg",
     "caption": "Iconic shading umbrellas opening at dawn in the Prophet's Mosque courtyard."
   },
   {
     "id": 5,
     "title": "The Blessed Green Dome",
     "category": "Madinah",
-    "image": "/images/madinah-green-dome.jpg",
+    "image": "/iconic-travel-tours/images/madinah-green-dome.jpg",
     "caption": "The venerable Green Dome over the resting place of the beloved Messenger (pbuh)."
   },
   {
     "id": 6,
     "title": "Arches of Prophetic Serenity",
     "category": "Madinah",
-    "image": "/images/madinah-prophet-mosque.jpg",
+    "image": "/iconic-travel-tours/images/madinah-prophet-mosque.jpg",
     "caption": "Intricate Ottoman and Saudi architectural arches inside Masjid an-Nabawi."
   },
   {
     "id": 7,
     "title": "Pilgrim in Silent Supplication",
     "category": "Umrah",
-    "image": "/images/pilgrim-prayer.jpg",
+    "image": "/iconic-travel-tours/images/pilgrim-prayer.jpg",
     "caption": "Heartfelt Du'a offered with uplifted hands before the House of Allah."
   },
   {
     "id": 8,
     "title": "Holy Qur'an on Rehal",
     "category": "Umrah",
-    "image": "/images/quran-rehal.jpg",
+    "image": "/iconic-travel-tours/images/quran-rehal.jpg",
     "caption": "Recitation of the sacred book during spiritual retreat."
   },
   {
     "id": 9,
     "title": "Jabal al-Noor & Mountain of Light",
     "category": "Ziyarat",
-    "image": "/images/jabal-al-noor.jpg",
+    "image": "/iconic-travel-tours/images/jabal-al-noor.jpg",
     "caption": "The historic heights enclosing the Cave of Hira in Makkah."
   },
   {
     "id": 10,
     "title": "Masjid Quba Architecture",
     "category": "Ziyarat",
-    "image": "/images/masjid-quba.jpg",
+    "image": "/iconic-travel-tours/images/masjid-quba.jpg",
     "caption": "The pristine white domes and palm trees of the first mosque in Islam."
   },
   {
     "id": 11,
     "title": "Mount Uhud Battlefield",
     "category": "Ziyarat",
-    "image": "/images/mount-uhud.jpg",
+    "image": "/iconic-travel-tours/images/mount-uhud.jpg",
     "caption": "The solemn mountain of historical valor and martyrs in Madinah."
   },
   {
     "id": 12,
     "title": "Plains of Arafat",
     "category": "Ziyarat",
-    "image": "/images/arafat-rahmah.jpg",
+    "image": "/iconic-travel-tours/images/arafat-rahmah.jpg",
     "caption": "Jabal al-Rahmah rising above the sacred plain of Wuqoof."
   },
   {
     "id": 13,
     "title": "Valley of Mina",
     "category": "Ziyarat",
-    "image": "/images/mina-valley.jpg",
+    "image": "/iconic-travel-tours/images/mina-valley.jpg",
     "caption": "The historic encampment valley between Makkah and Muzdalifah."
   },
   {
     "id": 14,
     "title": "Presidential Haram-View Suite",
     "category": "Hotels",
-    "image": "/images/luxury-hotel-suite.jpg",
+    "image": "/iconic-travel-tours/images/luxury-hotel-suite.jpg",
     "caption": "5-star luxury living with direct visual elevation overlooking the Haram."
   },
   {
     "id": 15,
     "title": "Executive Morning Breakfast Dining",
     "category": "Hotels",
-    "image": "/images/luxury-hotel-dining.jpg",
+    "image": "/iconic-travel-tours/images/luxury-hotel-dining.jpg",
     "caption": "Nutritious morning buffet spread featured in our group hospitality program."
   },
   {
     "id": 16,
     "title": "Deluxe Hotel Accommodation",
     "category": "Hotels",
-    "image": "/images/luxury-hotel-room.jpg",
+    "image": "/iconic-travel-tours/images/luxury-hotel-room.jpg",
     "caption": "Comfortable, serene bedding designed to restore pilgrim vitality."
   },
   {
     "id": 17,
     "title": "VIP Executive Transportation",
     "category": "Group Travel",
-    "image": "/images/vip-transport.jpg",
+    "image": "/iconic-travel-tours/images/vip-transport.jpg",
     "caption": "Punctual air-conditioned intercity highway coaches and private vehicles."
   },
   {
     "id": 18,
     "title": "Airport Departure Coordination",
     "category": "Group Travel",
-    "image": "/images/flight-departure.jpg",
+    "image": "/iconic-travel-tours/images/flight-departure.jpg",
     "caption": "End-to-end flight management and check-in assistance for traveling groups."
   },
   {
     "id": 19,
     "title": "Dedicated 24/7 Concierge Desk",
     "category": "Group Travel",
-    "image": "/images/concierge-service.jpg",
+    "image": "/iconic-travel-tours/images/concierge-service.jpg",
     "caption": "Your comfort, our priority — always on hand to assist."
   }
 ]

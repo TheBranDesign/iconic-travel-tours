@@ -6,7 +6,7 @@
 **Location:** Office #502, Iconic Business Center, Sharfabad, Karachi, Pakistan  
 **Repository:** [https://github.com/thebrandesign/iconic-travel-tours](https://github.com/thebrandesign/iconic-travel-tours)  
 **Hosting Platform:** GitHub Pages (Static SSG)  
-**Production Custom Domain:** [https://www.iconictravelandtours.com](https://www.iconictravelandtours.com)  
+**Live Website URL:** [https://thebrandesign.github.io/iconic-travel-tours/](https://thebrandesign.github.io/iconic-travel-tours/)  
 **Tagline:** *YOUR COMFORT, OUR PRIORITY*  
 **Brand Message:** *A Journey of Faith*  
 
@@ -102,25 +102,8 @@ The repository includes an automated CI/CD workflow at `.github/workflows/deploy
 2. The workflow checks out the repository, installs dependencies, and runs `npm run build`.
 3. The resulting `./dist` artifact is uploaded and deployed to GitHub Pages using official GitHub Actions (`actions/deploy-pages@v4`).
 
-### Custom Domain DNS Settings
-The custom domain `www.iconictravelandtours.com` is configured via `public/CNAME`.
-To link the domain with your DNS provider (e.g. GoDaddy, Cloudflare, Namecheap):
-
-1. **For the WWW Subdomain (`www.iconictravelandtours.com`):**
-   - **Type:** `CNAME`
-   - **Host / Name:** `www`
-   - **Target / Value:** `thebrandesign.github.io`
-   - **TTL:** Automatic or 3600
-
-2. **For the Apex Domain (`iconictravelandtours.com`) - Optional Forwarding:**
-   - Configure DNS `A` records pointing to GitHub Pages IP addresses:
-     ```
-     185.199.108.153
-     185.199.109.153
-     185.199.110.153
-     185.199.111.153
-     ```
-   - In GitHub Repository Settings -> Pages, ensure "Enforce HTTPS" is checked once DNS resolves.
+### GitHub Pages Project Site Structure
+The website is served at `https://thebrandesign.github.io/iconic-travel-tours/` with base path `/iconic-travel-tours/`. All asset paths, stylesheets, images, scripts, and internal page links resolve relative to this base path.
 
 ---
 

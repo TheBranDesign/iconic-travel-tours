@@ -1,4 +1,4 @@
----
+﻿---
 import Layout from '../../layouts/Layout.astro';
 import destinations from '../../data/destinations.json';
 ---
@@ -12,7 +12,7 @@ import destinations from '../../data/destinations.json';
   <section class="relative py-20 bg-brand-emerald text-white overflow-hidden">
     <div class="absolute inset-0 z-0">
       <img
-        src="/images/makkah-panoramic.jpg"
+        src="/iconic-travel-tours/images/makkah-panoramic.jpg"
         alt="Sacred destinations"
         class="w-full h-full object-cover opacity-20 scale-105"
       />
@@ -78,7 +78,7 @@ import destinations from '../../data/destinations.json';
                   {dest.landmarks.length} Historic Landmarks
                 </span>
                 <a
-                  href={`/destinations/${dest.slug}`}
+                  href={`/iconic-travel-tours/destinations/${dest.slug}/`}
                   class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-brand-emerald hover:text-brand-gold-dark transition-colors"
                 >
                   <span>Explore Destination</span>
@@ -105,7 +105,7 @@ import destinations from '../../data/destinations.json';
           </p>
         </div>
         <a
-          href="/request-a-quote"
+          href="/iconic-travel-tours/request-a-quote/"
           class="px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider bg-brand-emerald text-brand-gold hover:bg-brand-forest transition-colors whitespace-nowrap"
         >
           Request Custom Itinerary

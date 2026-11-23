@@ -3,15 +3,15 @@ import Logo from './Logo.astro';
 import company from '../data/company.json';
 
 const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/about', label: 'About Us' },
-  { href: '/umrah-packages', label: 'Umrah Packages' },
-  { href: '/services', label: 'Services' },
-  { href: '/destinations', label: 'Destinations' },
-  { href: '/ziyarat-guide', label: 'Ziyarat Guide' },
-  { href: '/travel-guide', label: 'Travel Guide' },
-  { href: '/gallery', label: 'Gallery' },
-  { href: '/contact', label: 'Contact' }
+  { href: '/iconic-travel-tours/', label: 'Home' },
+  { href: '/iconic-travel-tours/about/', label: 'About Us' },
+  { href: '/iconic-travel-tours/umrah-packages/', label: 'Umrah Packages' },
+  { href: '/iconic-travel-tours/services/', label: 'Services' },
+  { href: '/iconic-travel-tours/destinations/', label: 'Destinations' },
+  { href: '/iconic-travel-tours/ziyarat-guide/', label: 'Ziyarat Guide' },
+  { href: '/iconic-travel-tours/travel-guide/', label: 'Travel Guide' },
+  { href: '/iconic-travel-tours/gallery/', label: 'Gallery' },
+  { href: '/iconic-travel-tours/contact/', label: 'Contact' }
 ];
 
 const currentPath = Astro.url.pathname;
@@ -28,7 +28,8 @@ const cleanPath = currentPath.endsWith('/') && currentPath.length > 1 ? currentP
       <!-- Desktop Navigation Menu -->
       <nav class="hidden xl:flex items-center gap-6" aria-label="Main Navigation">
         {navLinks.map((link) => {
-          const isActive = cleanPath === link.href || (link.href !== '/' && cleanPath.startsWith(link.href));
+          const normalizedLink = link.href.endsWith('/') && link.href.length > 1 ? link.href.slice(0, -1) : link.href;
+          const isActive = cleanPath === normalizedLink || (link.href !== '/iconic-travel-tours/' && cleanPath.startsWith(normalizedLink));
           return (
             <a
               href={link.href}
@@ -78,7 +79,7 @@ const cleanPath = currentPath.endsWith('/') && currentPath.length > 1 ? currentP
 
         <!-- Request a Quote CTA -->
         <a
-          href="/request-a-quote"
+          href="/iconic-travel-tours/request-a-quote/"
           class="hidden md:inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase bg-gradient-to-r from-brand-gold to-brand-gold-dark text-brand-emerald hover:brightness-110 shadow-md transition-all transform hover:-translate-y-0.5"
         >
           <span>Request Quote</span>
@@ -119,7 +120,8 @@ const cleanPath = currentPath.endsWith('/') && currentPath.length > 1 ? currentP
         <span class="text-xs uppercase tracking-widest text-brand-gold font-semibold">Menu Navigation</span>
       </div>
       {navLinks.map((link) => {
-        const isActive = cleanPath === link.href || (link.href !== '/' && cleanPath.startsWith(link.href));
+        const normalizedLink = link.href.endsWith('/') && link.href.length > 1 ? link.href.slice(0, -1) : link.href;
+        const isActive = cleanPath === normalizedLink || (link.href !== '/iconic-travel-tours/' && cleanPath.startsWith(normalizedLink));
         return (
           <a
             href={link.href}
@@ -136,7 +138,7 @@ const cleanPath = currentPath.endsWith('/') && currentPath.length > 1 ? currentP
     <!-- Mobile Drawer Footer Actions -->
     <div class="pt-6 border-t border-brand-gold/20 space-y-3">
       <a
-        href="/request-a-quote"
+        href="/iconic-travel-tours/request-a-quote/"
         class="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-sm font-semibold tracking-wider uppercase bg-brand-gold text-brand-emerald shadow-lg"
       >
         <span>Request a Free Quote</span>

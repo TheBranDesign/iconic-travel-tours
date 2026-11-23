@@ -3,9 +3,9 @@ import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://www.iconictravelandtours.com',
-  base: '/',
-  trailingSlash: 'never',
+  site: 'https://thebrandesign.github.io',
+  base: '/iconic-travel-tours',
+  trailingSlash: 'always',
   output: 'static',
   build: {
     format: 'directory'

@@ -10,28 +10,28 @@ const searchIndex = [
     category: 'Package',
     tag: p.category,
     desc: p.overview,
-    url: `/umrah-packages/${p.slug}`
+    url: `/iconic-travel-tours/umrah-packages/${p.slug}/`
   })),
   ...destinations.map(d => ({
     title: d.name,
     category: 'Destination',
     tag: d.arabicTitle,
     desc: d.intro,
-    url: `/destinations/${d.slug}`
+    url: `/iconic-travel-tours/destinations/${d.slug}/`
   })),
   ...services.map(s => ({
     title: s.title,
     category: 'Service',
     tag: 'Hospitality',
     desc: s.short,
-    url: `/services#${s.slug}`
+    url: `/iconic-travel-tours/services/#${s.slug}`
   })),
   ...ziyarat.map(z => ({
     title: z.name,
     category: 'Ziyarat Guide',
     tag: z.city,
     desc: z.short,
-    url: `/ziyarat-guide`
+    url: `/iconic-travel-tours/ziyarat-guide/`
   }))
 ];
 ---

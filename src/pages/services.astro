@@ -1,4 +1,4 @@
----
+﻿---
 import Layout from '../layouts/Layout.astro';
 import services from '../data/services.json';
 import company from '../data/company.json';
@@ -13,7 +13,7 @@ import company from '../data/company.json';
   <section class="relative py-20 bg-brand-emerald text-white overflow-hidden">
     <div class="absolute inset-0 z-0">
       <img
-        src="/images/luxury-hotel-suite.jpg"
+        src="/iconic-travel-tours/images/luxury-hotel-suite.jpg"
         alt="Luxury hospitality suite"
         class="w-full h-full object-cover opacity-20 scale-105"
       />
@@ -91,7 +91,7 @@ import company from '../data/company.json';
               <!-- Action CTAs -->
               <div class="pt-4 flex flex-wrap items-center gap-4">
                 <a
-                  href={`/request-a-quote?service=${svc.slug}`}
+                  href={`/iconic-travel-tours/request-a-quote/?service=${svc.slug}`}
                   class="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider bg-brand-emerald text-brand-gold hover:bg-brand-forest shadow-md transition-all"
                 >
                   <span>Inquire About This Service</span>
@@ -126,7 +126,7 @@ import company from '../data/company.json';
       </p>
       <div class="pt-2">
         <a
-          href="/request-a-quote"
+          href="/iconic-travel-tours/request-a-quote/"
           class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-xs font-bold uppercase tracking-widest bg-brand-gold text-brand-emerald hover:brightness-110 shadow-gold-glow transition-all"
         >
           <span>Launch Multi-Step Quote Builder</span>

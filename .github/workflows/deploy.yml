@@ -37,6 +37,11 @@ jobs:
       - name: Build Static Production Site
         run: npm run build
 
+      - name: Verify Output and Guard Against Custom Domain
+        run: |
+          rm -f ./dist/CNAME
+          ls -la ./dist
+
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
         with:

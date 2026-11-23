@@ -66,7 +66,7 @@ const displayImage = pkg.cardImage || pkg.heroImage;
   <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
     <div>
       <h3 class="font-serif text-2xl font-bold text-brand-emerald group-hover:text-brand-gold-dark transition-colors">
-        <a href={`/umrah-packages/${pkg.slug}`}>{pkg.name}</a>
+        <a href={`/iconic-travel-tours/umrah-packages/${pkg.slug}/`}>{pkg.name}</a>
       </h3>
       <p class="text-xs font-mono text-brand-gold-dark uppercase tracking-wider mt-1">
         Departure: {pkg.departureMonth}
@@ -107,13 +107,13 @@ const displayImage = pkg.cardImage || pkg.heroImage;
     <!-- Action Buttons -->
     <div class="grid grid-cols-2 gap-2 pt-1">
       <a
-        href={`/umrah-packages/${pkg.slug}`}
+        href={`/iconic-travel-tours/umrah-packages/${pkg.slug}/`}
         class="inline-flex items-center justify-center py-2.5 px-3 rounded-xl text-xs font-bold tracking-wider uppercase text-brand-emerald bg-brand-ivory hover:bg-brand-gold/20 border border-brand-gold/30 transition-all text-center"
       >
         View Package
       </a>
       <a
-        href={`/request-a-quote?package=${pkg.slug}`}
+        href={`/iconic-travel-tours/request-a-quote/?package=${pkg.slug}`}
         class="inline-flex items-center justify-center py-2.5 px-3 rounded-xl text-xs font-bold tracking-wider uppercase bg-brand-emerald text-brand-gold hover:bg-brand-forest transition-all text-center shadow-sm"
       >
         Request Quote

@@ -15,12 +15,12 @@ interface Props {
 const {
   title = "Iconic Travel & Tours (GL #5247) | Premium Umrah & International Travel",
   description = "Iconic Travel & Tours — Licensed Umrah specialists (GL #5247) based in Karachi. Dedicated group assistance, luxury hotel accommodation in Makkah & Madinah, and personalized spiritual journeys.",
-  image = "/images/hero-kaaba-tawaf.jpg",
+  image = "/iconic-travel-tours/images/hero-kaaba-tawaf.jpg",
   type = "website"
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://www.iconictravelandtours.com');
-const ogImageURL = new URL(image, Astro.site || 'https://www.iconictravelandtours.com');
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://thebrandesign.github.io');
+const ogImageURL = new URL(image, Astro.site || 'https://thebrandesign.github.io');
 
 const schemaData = {
   "@context": "https://schema.org",
@@ -30,8 +30,8 @@ const schemaData = {
   "identifier": "GL #5247",
   "slogan": "Your Comfort, Our Priority",
   "description": description,
-  "url": "https://www.iconictravelandtours.com",
-  "logo": "https://www.iconictravelandtours.com/images/hero-kaaba-tawaf.jpg",
+  "url": "https://thebrandesign.github.io/iconic-travel-tours/",
+  "logo": "https://thebrandesign.github.io/iconic-travel-tours/images/hero-kaaba-tawaf.jpg",
   "image": ogImageURL.toString(),
   "telephone": "+92-332-2177752",
   "email": "inquiry@iconictravelandtours.com",
@@ -62,7 +62,7 @@ const schemaData = {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/iconic-travel-tours/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
 
     <!-- SEO Meta Tags -->

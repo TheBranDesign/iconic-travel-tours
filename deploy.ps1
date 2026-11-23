@@ -10,7 +10,7 @@ Write-Host "==========================================================" -Foregro
 Write-Host "  ICONIC TRAVEL & TOURS - GITHUB PAGES DEPLOYMENT HELPER  " -ForegroundColor Gold
 Write-Host "==========================================================" -ForegroundColor Cyan
 Write-Host "Repository: https://github.com/thebrandesign/iconic-travel-tours"
-Write-Host "Custom Domain: www.iconictravelandtours.com"
+Write-Host "Live URL: https://thebrandesign.github.io/iconic-travel-tours/"
 Write-Host ""
 
 # Check if authenticated with GitHub
@@ -53,5 +53,4 @@ Write-Host "==========================================================" -Foregro
 Write-Host "GitHub Pages deployment is now running via GitHub Actions."
 Write-Host "Actions Tab: https://github.com/thebrandesign/iconic-travel-tours/actions"
 Write-Host "Published URL: https://thebrandesign.github.io/iconic-travel-tours/"
-Write-Host "Custom Domain: https://www.iconictravelandtours.com"
 Write-Host "==========================================================" -ForegroundColor Green
